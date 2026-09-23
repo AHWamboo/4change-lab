@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Zilla+Slab:wght@500;600;700&amp;family=Kaushan+Script&amp;display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    @media(max-width:760px){.brand-full{display:none!important}.brand-mark{display:block!important}}
+    body{margin:0}
+    a{color:#14181f;text-decoration:none;transition:color .15s ease}
+    a:hover{color:#12b76a}
+  </style>
+</helmet>
+<div style="font-family:'Manrope',sans-serif;background:#f6f8f5;color:#14181f">
+
+  <header style="position:sticky;top:0;z-index:30;background:rgba(246,248,245,.88);backdrop-filter:blur(12px);border-bottom:1px solid #dbe4dd">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 28px">
+      <a href="Glowna.dc.html" style="display:inline-flex;align-items:center"><img class="brand-full" src="uploads/logo-4change-lab.png" alt="4change Lab" style="height:44px;width:auto;display:block"><img class="brand-mark" src="uploads/logo-4change-mark.png" alt="4change Lab" style="height:42px;width:auto;display:none"></a>
+      <nav style="display:flex;align-items:center;gap:22px;font-weight:600;font-size:15px">
+        <a href="Warsztaty-z-grami.dc.html">Warsztaty z grami</a>
+        <a href="Szkolenia.dc.html">Szkolenia</a>
+        <a href="#onas">O nas</a>
+        <a href="Blog.dc.html">Wiedza / Inspiracje</a>
+        <a href="Ankieta.dc.html" style="color:#0e9257">Dobierz grę</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px">
+        <div style="display:flex;flex:none;align-items:center;font-weight:700;font-size:14px;border:1px solid #dbe4dd;border-radius:999px;overflow:hidden;white-space:nowrap">
+          <span style="background:#14181f;color:#fff;padding:6px 12px">PL</span>
+          <span style="padding:6px 12px;color:#8a93a0">EN</span>
+        </div>
+        <a href="Ankieta.dc.html" style="background:#12b76a;color:#fff;padding:11px 20px;border-radius:999px;font-weight:700;font-size:15px">Kup grę</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="position:relative;overflow:hidden;background:linear-gradient(180deg,#eef3ee 0%,#f6f8f5 100%)">
+    <div style="max-width:1200px;margin:0 auto;padding:64px 28px 0;display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:end">
+      <div style="padding-bottom:56px">
+        <div style="display:inline-block;background:#f2e14c;color:#14181f;font-weight:700;font-size:14px;padding:7px 15px;border-radius:999px;margin-bottom:22px">Gry szkoleniowe dla zespołów</div>
+        <h1 style="font-family:'Zilla Slab',serif;font-weight:700;font-size:clamp(46px,6vw,84px);line-height:1;letter-spacing:-.01em;margin:0 0 16px">Ucz się<br>przez grę.</h1>
+        <p style="font-size:19px;line-height:1.55;color:#5c6470;max-width:460px;margin:0 0 28px">Gry warsztatowe, w których ludzie muszą się spotkać, zagrać i wspólnie rozwiązać problem. Stacjonarnie, online albo do samodzielnego kupienia.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="Ankieta.dc.html" style="background:#12b76a;color:#fff;padding:15px 28px;border-radius:16px;font-weight:700;font-size:16px;box-shadow:0 12px 26px rgba(18,183,106,.28)">Kup grę</a>
+          <a href="#jak" style="background:#fff;color:#14181f;padding:15px 28px;border-radius:16px;font-weight:700;font-size:16px;box-shadow:0 10px 24px rgba(20,24,31,.08)">Jak to działa</a>
+        </div>
+      </div>
+      <div style="aspect-ratio:1/1;border-radius:32px;background:linear-gradient(160deg,#12b76a,#2b7cff 55%,#7b5cff);display:flex;align-items:flex-end;justify-content:center;padding:24px;margin-bottom:-64px;box-shadow:0 28px 60px rgba(18,183,106,.22)">
+        <span style="font-family:ui-monospace,monospace;font-size:12px;color:rgba(255,255,255,.9);letter-spacing:.06em;text-align:center;line-height:1.7">[ RENDER 3D / BOHATER<br>wrzuć grafikę tutaj ]</span>
+      </div>
+    </div>
+    <div style="height:96px"></div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section style="max-width:1200px;margin:0 auto;padding:72px 28px 56px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px">
+      <div style="background:#fff;border-radius:22px;padding:26px 28px;box-shadow:0 12px 28px rgba(20,24,31,.07)"><div style="font-family:'Zilla Slab',serif;font-size:42px;line-height:1">120+</div><div style="color:#5c6470;font-size:15px;margin-top:6px">przeszkolonych zespołów</div></div>
+      <div style="background:#fff;border-radius:22px;padding:26px 28px;box-shadow:0 12px 28px rgba(20,24,31,.07)"><div style="font-family:'Zilla Slab',serif;font-size:42px;line-height:1">3</div><div style="color:#5c6470;font-size:15px;margin-top:6px">gry gotowe do gry</div></div>
+      <div style="background:#fff;border-radius:22px;padding:26px 28px;box-shadow:0 12px 28px rgba(20,24,31,.07)"><div style="font-family:'Zilla Slab',serif;font-size:42px;line-height:1">98%</div><div style="color:#5c6470;font-size:15px;margin-top:6px">poleca dalej</div></div>
+      <div style="background:#fff;border-radius:22px;padding:26px 28px;box-shadow:0 12px 28px rgba(20,24,31,.07)"><div style="font-family:'Zilla Slab',serif;font-size:42px;line-height:1">3</div><div style="color:#5c6470;font-size:15px;margin-top:6px">formy: sala · online · box</div></div>
+    </div>
+  </section>
+
+  <!-- ANKIETA CTA -->
+  <section style="max-width:1200px;margin:0 auto;padding:8px 28px 56px">
+    <a href="Ankieta.dc.html" style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;background:#14181f;color:#f6f8f5;border-radius:24px;padding:34px 40px;text-decoration:none">
+      <div style="display:flex;gap:20px;align-items:center">
+        <span style="font-size:40px;line-height:1;flex:none">🧭</span>
+        <div>
+          <div style="font-family:'Zilla Slab',serif;font-size:clamp(22px,2.4vw,30px);margin-bottom:4px">Nie wiesz, którą grę wybrać?</div>
+          <p style="color:rgba(246,248,245,.7);font-size:16px;margin:0">Wypełnij krótką ankietę, a dobierzemy grę do celu, zespołu i formatu wydarzenia.</p>
+        </div>
+      </div>
+      <span style="background:#12b76a;color:#fff;padding:14px 26px;border-radius:999px;font-weight:700;font-size:16px;white-space:nowrap;flex:none">Dobierz grę →</span>
+    </a>
+  </section>
+
+  <!-- KATALOG GIER -->
+  <section id="gry" style="max-width:1200px;margin:0 auto;padding:16px 28px 72px">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:32px;flex-wrap:wrap">
+      <div>
+        <div style="color:#12b76a;font-family:'Kaushan Script',cursive;font-weight:400;font-size:26px;line-height:1.1;margin-bottom:10px">Nasze gry</div>
+        <h2 style="font-family:'Zilla Slab',serif;font-size:clamp(32px,4vw,52px);margin:0">Wybierz grę dla zespołu</h2>
+      </div>
+      <a href="Ankieta.dc.html" style="background:#fff;border:1px solid #dbe4dd;padding:13px 22px;border-radius:999px;font-weight:700">Zobacz wszystkie →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:52px">
+      <sc-for list="{{ picks }}" as="p" hint-placeholder-count="8">
+        <a href="{{ p.link }}" style="display:flex;align-items:center;gap:13px;background:#fff;border:1px solid #e6ece7;border-radius:16px;padding:13px 15px;transition:border-color .15s ease,transform .15s ease" style-hover="border-color:#12b76a;transform:translateY(-2px)">
+          <span style="width:46px;height:46px;flex:none;border-radius:13px;background:{{ p.iconBg }};display:flex;align-items:center;justify-content:center;font-size:23px">{{ p.icon }}</span>
+          <span style="display:flex;flex-direction:column;gap:2px;min-width:0">
+            <span style="font-weight:700;font-size:15px;line-height:1.2;color:#14181f">{{ p.name }}</span>
+            <span style="color:#8a93a0;font-size:12px;font-weight:600">{{ p.tag }}</span>
+          </span>
+        </a>
+      </sc-for>
+      <a href="Ankieta.dc.html" style="display:flex;align-items:center;gap:13px;background:#eaf1ec;border:1.5px dashed #12b76a;border-radius:16px;padding:13px 15px;transition:transform .15s ease" style-hover="transform:translateY(-2px)">
+        <span style="width:46px;height:46px;flex:none;border-radius:13px;background:#12b76a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:23px">✨</span>
+        <span style="display:flex;flex-direction:column;gap:2px;min-width:0">
+          <span style="font-weight:700;font-size:15px;line-height:1.2;color:#0e9257">Nie wiesz którą?</span>
+          <span style="color:#5c6470;font-size:12px;font-weight:600">Dobierz grę w 1 min →</span>
+        </span>
+      </a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:52px">
+      <sc-for list="{{ collections }}" as="col" hint-placeholder-count="4">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+            <span style="width:16px;height:16px;border-radius:5px;background:{{ col.color }};flex:none"></span>
+            <h3 style="font-family:'Zilla Slab',serif;font-size:clamp(24px,2.8vw,34px);margin:0">{{ col.title }}</h3>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(252px,1fr));gap:22px">
+            <sc-for list="{{ col.games }}" as="g" hint-placeholder-count="3">
+              <a href="{{ g.link }}" style="position:relative;display:flex;flex-direction:column;justify-content:flex-end;aspect-ratio:3/4;border-radius:28px;overflow:hidden;padding:26px 24px;transition:transform .18s ease,box-shadow .18s ease;box-shadow:0 16px 34px rgba(20,24,31,.12)" style-hover="transform:translateY(-6px);box-shadow:0 26px 50px rgba(20,24,31,.2)">
+                <span style="{{ g.artStyle }}"></span>
+                <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,24,31,0) 32%,rgba(20,24,31,.78) 100%)"></span>
+                <span style="position:absolute;top:20px;left:22px;background:rgba(255,255,255,.92);color:#0e9257;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px">{{ g.tag }}</span>
+                <span style="position:absolute;top:50%;left:0;right:0;text-align:center;font-family:ui-monospace,monospace;font-size:11px;color:rgba(255,255,255,.55);letter-spacing:.06em">[ KEY ART ]</span>
+                <span style="position:relative;display:block;font-family:'Zilla Slab',serif;font-weight:700;font-size:24px;line-height:1.15;color:#fff;margin-bottom:6px">{{ g.name }}</span>
+                <span style="position:relative;display:block;color:rgba(255,255,255,.78);font-size:14px;font-weight:600">{{ g.price }}</span>
+              </a>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- TYPY GIER -->
+  <section id="szkolenia" style="max-width:1200px;margin:0 auto;padding:16px 28px 72px">
+    <div style="color:#0e9257;font-family:'Kaushan Script',cursive;font-weight:400;font-size:26px;line-height:1.1;margin-bottom:10px">Typy gier</div>
+    <h2 style="font-family:'Zilla Slab',serif;font-size:clamp(32px,4vw,52px);margin:0 0 32px;max-width:680px">Dobieramy format gry do celu warsztatu</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+      <sc-for list="{{ gameTypes }}" as="gt" hint-placeholder-count="10">
+        <div style="background:#fff;border:1px solid #e6ece7;border-radius:18px;padding:22px 22px;display:flex;gap:14px;align-items:flex-start">
+          <span style="font-size:26px;line-height:1;flex:none">{{ gt.icon }}</span>
+          <div><h3 style="font-family:'Zilla Slab',serif;font-size:19px;margin:0 0 4px">{{ gt.name }}</h3><p style="color:#5c6470;font-size:14px;line-height:1.45;margin:0">{{ gt.desc }}</p></div>
+        </div>
+      </sc-for>
+    </div>
+    <p style="color:#5c6470;font-weight:600;font-size:14px;margin:28px 0 12px">Często poszukiwane dodatki:</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+      <sc-for list="{{ gameTypeTags }}" as="gt" hint-placeholder-count="2">
+        <div style="background:linear-gradient(150deg,#f6f8f5,#eaf1ec);border:1px dashed #9aa4b0;border-radius:18px;padding:22px 22px;display:flex;gap:14px;align-items:flex-start">
+          <span style="font-size:26px;line-height:1;flex:none">{{ gt.icon }}</span>
+          <div><h3 style="font-family:'Zilla Slab',serif;font-size:19px;margin:0 0 4px">{{ gt.name }}</h3><p style="color:#5c6470;font-size:14px;line-height:1.45;margin:0">{{ gt.desc }}</p></div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- JAK TO DZIALA -->
+  <section id="jak" style="background:#14181f;color:#f6f8f5">
+    <div style="max-width:1200px;margin:0 auto;padding:80px 28px">
+      <div style="color:#f6a623;font-family:'Kaushan Script',cursive;font-weight:400;font-size:26px;line-height:1.1;margin-bottom:12px">Jak to działa</div>
+      <h2 style="font-family:'Zilla Slab',serif;font-size:clamp(32px,4vw,52px);margin:0 0 44px;max-width:640px">Od celu rozwojowego do trwałej zmiany</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+          <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:28px 24px">
+            <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:14px"><span style="font-family:'Zilla Slab',serif;font-size:44px;color:#f6a623;line-height:1">{{ s.no }}</span><span style="font-size:26px;line-height:1">{{ s.icon }}</span></div>
+            <h3 style="font-family:'Zilla Slab',serif;font-size:22px;margin:0 0 10px">{{ s.title }}</h3>
+            <p style="color:rgba(246,248,245,.7);font-size:15px;line-height:1.5;margin:0">{{ s.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px">
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:28px 26px">
+          <div style="font-size:26px;line-height:1;margin-bottom:12px">📦</div>
+          <h3 style="font-family:'Zilla Slab',serif;font-size:22px;margin:0 0 8px">Kup samą grę</h3>
+          <p style="color:rgba(246,248,245,.7);font-size:15px;line-height:1.5;margin:0">…i poprowadź warsztat we własnym zakresie.</p>
+        </div>
+        <div style="background:linear-gradient(150deg,#12b76a,#2b7cff 90%);border-radius:22px;padding:28px 26px">
+          <div style="font-size:26px;line-height:1;margin-bottom:12px">🤝</div>
+          <h3 style="font-family:'Zilla Slab',serif;font-size:22px;margin:0 0 8px">Lub powierz to nam</h3>
+          <p style="color:rgba(255,255,255,.9);font-size:15px;line-height:1.5;margin:0">Przygotujemy i poprowadzimy angażujący warsztat online lub stacjonarnie, wykorzystując grę jako narzędzie rozwoju zespołu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAUKA POPRZEZ DOSWIADCZENIE -->
+  <section style="max-width:1200px;margin:0 auto;padding:80px 28px 20px">
+    <div style="color:#0e9257;font-family:'Kaushan Script',cursive;font-weight:400;font-size:26px;line-height:1.1;margin-bottom:10px">Nasza metoda</div>
+    <h2 style="font-family:'Zilla Slab',serif;font-size:clamp(32px,4.4vw,56px);margin:0 0 36px">Nauka poprzez <span style="color:#12b76a">doświadczenie</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:40px">
+      <sc-for list="{{ method }}" as="m" hint-placeholder-count="3">
+        <div style="background:#fff;border:1px solid #e6ece7;border-radius:20px;padding:26px 26px">
+          <div style="font-size:30px;line-height:1;margin-bottom:12px">💡</div>
+          <p style="font-size:16px;line-height:1.55;color:#3a424e;margin:0">{{ m }}</p>
+        </div>
+      </sc-for>
+    </div>
+    <div style="background:#eaf1ec;border-radius:24px;padding:36px 40px;margin-bottom:24px">
+      <p style="font-size:18px;line-height:1.6;color:#3a424e;margin:0 0 12px">Na etapie projektowania procesu rozwojowego sprawdzamy, jakich rezultatów oczekujesz, a potem dobieramy odpowiednie metody, narzędzia i gry. Naszym celem nie jest realizacja szkolenia.</p>
+      <p style="font-family:'Zilla Slab',serif;font-size:clamp(20px,2.4vw,26px);color:#0e9257;margin:0">Naszym celem jest dostarczenie rozwiązań, które zrealizują Twoje cele.</p>
+    </div>
+  </section>
+
+  <!-- TYLKO PRAKTYKA -->
+  <section style="max-width:1200px;margin:0 auto;padding:40px 28px 40px">
+    <div style="background:linear-gradient(150deg,#12b76a,#0e9257);border-radius:28px;padding:52px 48px;color:#fff">
+      <h2 style="font-family:'Zilla Slab',serif;font-size:clamp(30px,3.8vw,48px);margin:0 0 14px">Tylko praktyka</h2>
+      <p style="font-size:18px;line-height:1.6;color:rgba(255,255,255,.9);margin:0 0 28px;max-width:820px">Na sali szkoleniowej pracujemy metodą warsztatową, korzystając z gier szkoleniowych. Projektujemy pracę zgodnie z zasadami skutecznej nauki dorosłych, czyli:</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 32px">
+        <sc-for list="{{ practice }}" as="pr" hint-placeholder-count="6">
+          <div style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5"><span style="width:8px;height:8px;border-radius:50%;background:#f2e14c;flex:none;margin-top:8px"></span><span style="color:rgba(255,255,255,.95)">{{ pr }}</span></div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- DLA KOGO / BRANZE -->
+  <section style="max-width:1200px;margin:0 auto;padding:80px 28px 40px">
+    <div style="display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center">
+      <div>
+        <div style="color:#12b76a;font-family:'Kaushan Script',cursive;font-weight:400;font-size:26px;line-height:1.1;margin-bottom:12px">Dla kogo</div>
+        <h2 style="font-family:'Zilla Slab',serif;font-size:clamp(30px,3.6vw,46px);margin:0 0 18px">Zespoły, które chcą czegoś więcej niż bieganie po drzewach</h2>
+        <p style="font-size:18px;color:#5c6470;line-height:1.55;margin:0">Pracujemy z działami HR i liderami zespołów w firmach MŚP i korporacjach. Ciekawa alternatywa i uzupełnienie standardowych warsztatów oraz team buildingu.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px">
+        <sc-for list="{{ industries }}" as="ind" hint-placeholder-count="6">
+          <div style="background:#fff;border:1px solid #e6ece7;border-radius:18px;padding:22px 22px;font-weight:700;font-size:17px;display:flex;align-items:center;gap:12px">
+            <span style="width:10px;height:10px;border-radius:3px;background:#12b76a;flex:none"></span>{{ ind }}
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO KLIENTOW -->
+  <section style="max-width:1200px;margin:0 auto;padding:48px 28px 72px">
+    <p style="text-align:center;color:#8a93a0;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:13px;margin:0 0 28px">Zaufali nam</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px">
+      <sc-for list="{{ logos }}" as="l" hint-placeholder-count="6">
+        <div style="background:#fff;border:1px solid #e6ece7;border-radius:16px;height:76px;display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:12px;color:#9aa4b0">[ {{ l }} ]</div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- OPINIE -->
+  <section style="background:#eaf1ec">
+    <div style="max-width:1200px;margin:0 auto;padding:80px 28px">
+      <div style="color:#12b76a;font-family:'Kaushan Script',cursive;font-weight:400;font-size:26px;line-height:1.1;margin-bottom:12px">Opinie klientów</div>
+      <h2 style="font-family:'Zilla Slab',serif;font-size:clamp(30px,3.6vw,46px);margin:0 0 40px">Co mówią zespoły po grze</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+        <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+          <div style="background:#fff;border-radius:24px;padding:30px 28px;display:flex;flex-direction:column;gap:20px">
+            <p style="font-family:'Zilla Slab',serif;font-size:21px;line-height:1.4;margin:0;color:#14181f">„{{ t.quote }}"</p>
+            <div style="display:flex;align-items:center;gap:14px;margin-top:auto">
+              <div style="width:46px;height:46px;border-radius:50%;background:repeating-linear-gradient(135deg,#e9e2d5 0 8px,#f0eadd 8px 16px);flex:none"></div>
+              <div><div style="font-weight:700">{{ t.name }}</div><div style="color:#8a93a0;font-size:14px">{{ t.role }}</div></div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- O NAS TEASER -->
+  <section id="onas" style="max-width:1200px;margin:0 auto;padding:80px 28px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center">
+      <div style="aspect-ratio:4/3;border-radius:26px;background:repeating-linear-gradient(135deg,#e9e2d5 0 16px,#f0eadd 16px 32px);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,monospace;font-size:13px;color:#8a93a0;text-align:center;padding:0 20px">[ ZDJĘCIE ZESPOŁU 4change /<br>trenerzy przy pracy ]</div>
+      <div>
+        <div style="color:#12b76a;font-family:'Kaushan Script',cursive;font-weight:400;font-size:26px;line-height:1.1;margin-bottom:12px">O nas</div>
+        <h2 style="font-family:'Zilla Slab',serif;font-size:clamp(30px,3.6vw,46px);margin:0 0 18px">Projektujemy grę pod Twój cel</h2>
+        <p style="font-size:18px;color:#5c6470;line-height:1.55;margin:0 0 26px">Zwinny zespół, który szyje usługę pod oczekiwania klienta. Prezentujemy współwłaścicielki i trenerów współpracujących — poznaj ludzi stojących za grami.</p>
+        <a href="Glowna.dc.html#onas" style="background:#14181f;color:#fff;padding:14px 26px;border-radius:999px;font-weight:700;display:inline-block">Poznaj zespół</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / KONTAKT -->
+  <section id="kontakt" style="max-width:1200px;margin:0 auto;padding:16px 28px 80px">
+    <div style="position:relative;overflow:hidden;background:#14181f;border-radius:32px;padding:64px 48px;color:#f6f8f5;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center">
+      <div style="position:absolute;inset:0;background:radial-gradient(circle at 20% 120%,rgba(18,183,106,.55),transparent 60%),radial-gradient(circle at 85% -10%,rgba(123,92,255,.45),transparent 55%)"></div>
+      <div style="position:relative">
+        <h2 style="font-family:'Zilla Slab',serif;font-weight:700;font-size:clamp(30px,4vw,50px);margin:0 0 12px">Gotowy zagrać z zespołem?</h2>
+        <p style="font-size:18px;color:rgba(246,248,245,.78);margin:0;max-width:520px">Kup grę online albo wyślij zapytanie o warsztat dopasowany do Twojego zespołu.</p>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;gap:12px">
+        <a href="Ankieta.dc.html" style="background:#f2e14c;color:#14181f;padding:16px 32px;border-radius:16px;font-weight:700;font-size:17px;text-align:center">Kup grę</a>
+        <a href="Glowna.dc.html#kontakt" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);color:#f6f8f5;padding:16px 32px;border-radius:16px;font-weight:700;font-size:17px;text-align:center">Zapytaj o warsztat</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,460px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const thumb = (a, b) => ({
+      aspectRatio: '5/4',
+      background: `linear-gradient(150deg, ${a}, ${b})`,
+      display: 'flex', alignItems: 'flex-end', padding: '18px',
+      position: 'relative'
+    });
+    const mk = (o) => ({
+      name: o.name, tag: o.tag, focus: o.focus,
+      link: o.link || 'Warsztaty-z-grami.dc.html',
+      thumbStyle: thumb(o.c1, o.c2),
+      artStyle: { position: 'absolute', inset: 0, background: `linear-gradient(165deg, ${o.c1}, ${o.c2})` },
+      price: o.price || 'Wycena indywidualna',
+      priceStyle: o.price ? 'font-weight:700;font-size:16px;color:#14181f' : 'font-weight:600;font-size:14px;color:#9aa4b0;font-style:italic',
+      cta: (o.link && o.link !== '#') ? 'Szczegóły →' : 'Wkrótce'
+    });
+    const G = {
+      echo:    mk({ name: 'Operacja: Echo', tag: 'Komunikacja · Współpraca', focus: 'Angażująca gra zespołowa o komunikacji pod presją czasu.', price: 'od 5 900 zł netto', link: 'Produkt-Operacja-Echo.dc.html', c1: '#12b76a', c2: '#0b3d2c' }),
+      nadzieja:mk({ name: 'Wspólnota „Nadzieja 17”', tag: 'Komunikacja · Negocjacje', focus: 'Symulacja pokazująca, jak różne potrzeby i style komunikacji wpływają na wspólne decyzje.', c1: '#2b7cff', c2: '#241a4d' }),
+      lego:    mk({ name: 'LEGO® Serious Play®', tag: 'Strategia · Wizja', focus: 'Warsztat z metaforą i modelami z klocków LEGO® — wspólna wizja i rozwiązywanie złożonych problemów.', c1: '#7b5cff', c2: '#0e2a52' }),
+      dni30:   mk({ name: '30 dni', tag: 'Zarządzanie zmianą', focus: 'Dynamiczna symulacja biznesowa — presja zmian, niepewność i odpowiedzialność za wyniki.', link: 'Produkt-30-Dni.dc.html', c1: '#12b76a', c2: '#10254a' }),
+      zachod:  mk({ name: 'Wschód Dzikiego Zachodu', tag: 'Strategia · Sprzedaż', focus: 'Strategiczna gra zespołowa — rywalizacja, negocjacje i budowanie relacji biznesowych.', link: 'Produkt-Wschod-Dzikiego-Zachodu.dc.html', c1: '#f6a623', c2: '#5c1a12' }),
+      kod:     mk({ name: 'Kod Zagrożenia', tag: 'Escape · Team building', focus: 'Terenowa gra fabularna — zagadki, analiza informacji i współpraca pod presją czasu.', c1: '#e5472b', c2: '#2a1040' }),
+      symbole: mk({ name: 'Symbole', tag: 'Komunikacja · Przepływ informacji', focus: 'Ta sama informacja, różne interpretacje — gra o precyzji komunikacji i wspólnym rozumieniu.', link: 'Produkt-Symbole.dc.html', c1: '#12b76a', c2: '#241a4d' }),
+      omacku:  mk({ name: 'Po omacku', tag: 'Komunikacja · Aktywne słuchanie', focus: 'Kiedy nie możesz zobaczyć, musisz naprawdę zacząć słuchać — gra o dwustronnej komunikacji.', link: 'Produkt-Po-Omacku.dc.html', c1: '#7b5cff', c2: '#0b3d2c' }),
+      magneto: mk({ name: 'Magneto', tag: 'Negocjacje · Współpraca', focus: 'Negocjacje spotykają się ze współpracą — gra o tym, kiedy konkurować, a kiedy działać razem.', link: 'Produkt-Magneto.dc.html', c1: '#f6a623', c2: '#0b3d2c' }),
+      kompas:  mk({ name: 'Kompas Zmiany', tag: 'Zmiana · Leadership', focus: 'Warsztat i symulacja o świadomym wspieraniu transformacji w organizacji.', price: 'od 5 900 zł netto', link: 'Produkt-Kompas-Zmiany.dc.html', c1: '#7b5cff', c2: '#1b1440' })
+    };
+    const picks = [
+      { icon: '📡', name: 'Operacja: Echo', tag: 'Komunikacja', link: 'Produkt-Operacja-Echo.dc.html', iconBg: '#e6f7ef' },
+      { icon: '🤝', name: 'Nadzieja 17', tag: 'Negocjacje', link: '#gry', iconBg: '#eef2ff' },
+      { icon: '🧱', name: 'LEGO® Serious Play®', tag: 'Strategia · Wizja', link: '#gry', iconBg: '#f0ecff' },
+      { icon: '⏳', name: '30 dni', tag: 'Zarządzanie zmianą', link: '#gry', iconBg: '#eef2ff' },
+      { icon: '🤠', name: 'Wschód Dzikiego Zachodu', tag: 'Strategia · Sprzedaż', link: '#gry', iconBg: '#fdf1e3' },
+      { icon: '🔐', name: 'Kod Zagrożenia', tag: 'Escape · Team building', link: '#gry', iconBg: '#fdece8' },
+      { icon: '🧭', name: 'Kompas Zmiany', tag: 'Zmiana · Leadership', link: 'Produkt-Kompas-Zmiany.dc.html', iconBg: '#e6f7ef' }
+    ];
+    const collections = [
+      { title: 'Komunikacja i współpraca', color: '#12b76a', games: [G.echo, G.symbole, G.omacku, G.nadzieja, G.lego] },
+      { title: 'Strategia i decyzje', color: '#2b7cff', games: [G.dni30, G.magneto, G.zachod] },
+      { title: 'Integracja i eventy', color: '#f6a623', games: [G.kod, G.echo, G.zachod] },
+      { title: 'Zmiana i przywództwo', color: '#7b5cff', games: [G.lego, G.dni30, G.kompas] }
+    ];
+    const steps = [
+      { no: '01', icon: '🎯', title: 'Poznajemy Twoje wyzwanie', desc: 'Nie zaczynamy od wyboru gry. Zaczynamy od zrozumienia tego, co ma zmienić się w Twoim zespole.' },
+      { no: '02', icon: '🧩', title: 'Projektujemy doświadczenie', desc: 'Dobieramy grę, scenariusz i sposób prowadzenia do celu, uczestników oraz charakteru wydarzenia.' },
+      { no: '03', icon: '🎮', title: 'Gramy i uczymy się', desc: 'Gra staje się narzędziem doświadczania, współpracy i wyciągania wniosków, które od razu można przenieść do codziennej pracy.' },
+      { no: '04', icon: '🚀', title: 'Przenosimy zmianę do rzeczywistości', desc: 'Każdy projekt kończymy rekomendacjami i pomysłami na wdrożenie. Bo najważniejsze nie jest to, co wydarzyło się podczas gry, ale to, co wydarzy się po niej.' }
+    ];
+    const industries = ['Techniczna', 'Dystrybucja', 'Energetyka', 'Finanse i nieruchomości', 'IT', 'Startupy i e-commerce'];
+    const logos = ['LOGO 01', 'LOGO 02', 'LOGO 03', 'LOGO 04', 'LOGO 05', 'LOGO 06'];
+    const testimonials = [
+      { quote: 'Zespół gadał o tej grze jeszcze przez tydzień — i faktycznie zmieniło się to, jak podejmują decyzje.', name: 'Imię Nazwisko', role: 'HR Business Partner' },
+      { quote: 'Wreszcie warsztat, na który ludzie chcieli przyjść. Konkretny cel, świetna energia.', name: 'Imię Nazwisko', role: 'Team Lead, IT' },
+      { quote: 'Dopasowali scenariusz pod nasze realia sprzedażowe. Zero gotowców z półki.', name: 'Imię Nazwisko', role: 'Dyrektor Sprzedaży' }
+    ];
+    const gameTypes = [
+      { icon: '🤝', name: 'Kooperacyjna', desc: 'Uczestnicy osiągają wspólny cel — wygrywa cały zespół.' },
+      { icon: '⚔️', name: 'Rywalizacyjna', desc: 'Zespoły lub uczestnicy konkurują ze sobą.' },
+      { icon: '⚖️', name: 'Kooperacyjno-rywalizacyjna', desc: 'Współpraca wewnątrz zespołów i rywalizacja między nimi.' },
+      { icon: '📊', name: 'Symulacja biznesowa', desc: 'Odzwierciedla realne wyzwania organizacyjne i procesy biznesowe.' },
+      { icon: '🧭', name: 'Gra strategiczna', desc: 'Planowanie, analiza i decyzje w dłuższej perspektywie.' },
+      { icon: '🎯', name: 'Gra decyzyjna', desc: 'Wybory i konsekwencje podejmowanych decyzji.' },
+      { icon: '🎭', name: 'Gra fabularna', desc: 'Uczestnicy wcielają się w role i realistyczne scenariusze.' },
+      { icon: '🔐', name: 'Escape Game', desc: 'Zagadki prowadzące do wspólnego celu pod presją czasu.' },
+      { icon: '🧱', name: 'LEGO® Serious Play®', desc: 'Modele z klocków LEGO® do pracy nad komunikacją i strategią.' },
+      { icon: '💭', name: 'Gra refleksyjna', desc: 'Analiza doświadczeń, wymiana perspektyw i wnioski.' }
+    ];
+    const gameTypeTags = [
+      { icon: '⚡', name: 'Energizer', desc: 'Krótka gra aktywizująca, otwierająca lub zamykająca warsztat.' },
+      { icon: '🧩', name: 'Icebreaker', desc: 'Gra integracyjna przełamująca pierwsze lody.' }
+    ];
+    const method = [
+      'Zainspiruj zespół do działania. Wspieraj zespół poprzez refleksję i praktykę.',
+      'Wzmacniaj sprawczość i odpowiedzialność. Ucz poprzez doświadczenie.',
+      'Działaj i angażuj. Każda gra to emocje i praktyczna nauka zmian.'
+    ];
+    const practice = [
+      'uczenie przez doświadczenie rozwija współpracę, komunikację i refleksję nad własnym stylem myślenia i działania',
+      'natychmiastowy feedback przekłada się na realną zmianę',
+      'ograniczamy prezentacje teoretyczne do minimum — moduły projektujemy zgodnie z Cyklem Kolba, w którym teoria ma formę aktywizującej prezentacji',
+      'uczenie z udziałem gier angażuje i pobudza emocje, dzięki czemu wnioski i refleksje zostają z uczestnikami na dłużej',
+      'zajęcia prowadzimy w sposób zachęcający do otwartej dyskusji i odważnej wymiany opinii w bezpiecznej atmosferze tworzonej przez trenera',
+      'angażujemy uczestników szkoleń stacjonarnych i zdalnych: symulacje, case studies, odgrywanie ról, burze mózgów, breakout rooms, wirtualne tablice, quizy, ankiety, filmy, e-learning'
+    ];
+    const process = [
+      { step: 'Krok 1', desc: 'Przedstawienie oferty w odniesieniu do początkowych ustaleń.' },
+      { step: 'Krok 2', desc: 'Spotkanie ze zleceniodawcą szkolenia celem doprecyzowania oczekiwań.' },
+      { step: 'Krok 3', desc: 'Opracowanie szczegółowego programu szkolenia i ustalenie celu programu rozwojowego.' },
+      { step: 'Krok 4', desc: 'Realizacja projektu szkoleniowego z wykorzystaniem gry, zgodnie z ustaleniami.' },
+      { step: 'Krok 5', desc: 'Prezentacja ankiet po szkoleniu. Spotkanie podsumowujące projekt (opcjonalnie).' },
+      { step: 'Krok 6', desc: 'Dodatkowe konsultacje z trenerem.' }
+    ];
+    const needs = [
+      'ankiety/rozmowy z osobami zlecającymi projekt i przełożonymi osób szkolonych',
+      'ankiety/wywiady z uczestnikami szkolenia',
+      'obserwację uczestniczącą'
+    ];
+    const program = [
+      'określamy cele oraz oczekiwany efekt po szkoleniu',
+      'określamy kierunek pożądanej zmiany wiedzy, kompetencji czy zachowań uczestników szkolenia'
+    ];
+    return { collections, picks, steps, industries, logos, testimonials, gameTypes, gameTypeTags, method, practice, process, needs, program };
+  }
+}
+</script>
+</body>
+</html>

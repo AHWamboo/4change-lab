@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Zilla+Slab:wght@500;600;700&family=Kaushan+Script&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    @media(max-width:760px){.brand-full{display:none!important}.brand-mark{display:block!important}}
+    body{margin:0}
+    a{text-decoration:none}
+  </style>
+</helmet>
+<div style="font-family:'Manrope',sans-serif;background:#f6f8f5;color:#14181f">
+
+  <header style="position:sticky;top:0;z-index:30;background:rgba(246,248,245,.9);backdrop-filter:blur(12px);border-bottom:1px solid #dbe4dd">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 28px">
+      <a href="Glowna.dc.html" style="display:inline-flex;align-items:center"><img class="brand-full" src="uploads/logo-4change-lab.png" alt="4change Lab" style="height:44px;width:auto;display:block"><img class="brand-mark" src="uploads/logo-4change-mark.png" alt="4change Lab" style="height:42px;width:auto;display:none"></a>
+      <nav style="display:flex;align-items:center;gap:22px;font-weight:600;font-size:15px">
+        <a href="Warsztaty-z-grami.dc.html" style="color:#14181f">Warsztaty z grami</a>
+        <a href="Szkolenia.dc.html" style="color:#0e9257">Szkolenia</a>
+        <a href="Glowna.dc.html#onas" style="color:#14181f">O nas</a>
+        <a href="Blog.dc.html" style="color:#14181f">Wiedza / Inspiracje</a>
+        <a href="Ankieta.dc.html" style="color:#0e9257">Dobierz grę</a>
+        <a href="Glowna.dc.html#kontakt" style="color:#14181f">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="max-width:1200px;margin:0 auto;padding:48px 28px 40px">
+    <a href="Szkolenia.dc.html" style="color:#5c6470;font-size:14px;font-weight:600">← Wszystkie szkolenia</a>
+    <div style="display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;margin-top:20px">
+      <div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px">
+          <sc-for list="{{ p.tags }}" as="t" hint-placeholder-count="6">
+            <span style="background:#f2e14c;color:#14181f;font-weight:700;font-size:13px;padding:6px 13px;border-radius:999px">{{ t }}</span>
+          </sc-for>
+        </div>
+        <h1 style="font-family:'Zilla Slab',serif;font-weight:700;font-size:clamp(38px,4.6vw,62px);line-height:1.03;margin:0 0 12px">Sprzedaż usług IT</h1>
+        <p style="font-family:'Kaushan Script',cursive;font-weight:400;font-size:clamp(22px,2.6vw,30px);line-height:1.25;color:#0e9257;margin:0 0 20px">Od technologii do wartości biznesowej.</p>
+        <p style="font-size:18px;line-height:1.55;color:#5c6470;margin:0 0 28px;max-width:540px">{{ p.intro }}</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="Glowna.dc.html#kontakt" style="background:#12b76a;color:#fff;padding:14px 26px;border-radius:999px;font-weight:700;font-size:16px">Zapytaj o termin</a>
+          <a href="Glowna.dc.html#kontakt" style="background:#fff;border:1px solid #dbe4dd;color:#14181f;padding:14px 26px;border-radius:999px;font-weight:700;font-size:16px">Poproś o wycenę</a>
+        </div>
+      </div>
+      <div style="aspect-ratio:1/1;border-radius:32px;background:linear-gradient(160deg,#12b76a,#2b7cff 55%,#101b3d);box-shadow:0 28px 60px rgba(123,92,255,.24);display:flex;align-items:flex-end;justify-content:center;padding:24px">
+        <span style="font-family:ui-monospace,monospace;font-size:12px;color:rgba(255,255,255,.92);letter-spacing:.06em;text-align:center;line-height:1.7">[ KEY ART · SPRZEDAŻ USŁUG IT<br>wrzuć grafikę tutaj ]</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:24px 28px 72px;display:grid;grid-template-columns:1.6fr .9fr;gap:44px;align-items:start">
+
+    <div style="display:flex;flex-direction:column;gap:44px">
+
+      <div style="display:flex;flex-direction:column;gap:14px;color:#3a424e;font-size:17px;line-height:1.6">
+        <sc-for list="{{ p.lead }}" as="para" hint-placeholder-count="2">
+          <p style="margin:0">{{ para }}</p>
+        </sc-for>
+      </div>
+
+      <div>
+        <h2 style="font-family:'Zilla Slab',serif;font-size:30px;margin:0 0 16px">Dla kogo?</h2>
+        <div style="display:flex;flex-direction:column;gap:14px;color:#3a424e;font-size:17px;line-height:1.6">
+          <sc-for list="{{ p.forWhom }}" as="w" hint-placeholder-count="2">
+            <p style="margin:0">{{ w }}</p>
+          </sc-for>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="font-family:'Zilla Slab',serif;font-size:30px;margin:0 0 16px">Na czym polega?</h2>
+        <div style="display:flex;flex-direction:column;gap:14px;color:#3a424e;font-size:17px;line-height:1.6">
+          <sc-for list="{{ p.about }}" as="para" hint-placeholder-count="3">
+            <p style="margin:0">{{ para }}</p>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="background:#14181f;color:#f6f8f5;border-radius:24px;padding:36px 34px">
+        <h2 style="font-family:'Zilla Slab',serif;font-size:30px;margin:0 0 16px">Dlaczego ten program działa?</h2>
+        <div style="display:flex;flex-direction:column;gap:14px;color:rgba(246,248,245,.86);font-size:16px;line-height:1.65">
+          <sc-for list="{{ p.why }}" as="w" hint-placeholder-count="4">
+            <p style="margin:0">{{ w }}</p>
+          </sc-for>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="font-family:'Zilla Slab',serif;font-size:30px;margin:0 0 16px">Idealny na</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ p.idealFor }}" as="i" hint-placeholder-count="6">
+            <span style="background:#eaf1ec;color:#0e9257;border-radius:999px;padding:10px 18px;font-size:15px;font-weight:700">{{ i }}</span>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <aside style="position:sticky;top:96px;display:flex;flex-direction:column;gap:20px">
+      <div style="background:#fff;border:1px solid #e6ece7;border-radius:24px;padding:28px 26px;box-shadow:0 20px 40px -30px rgba(20,24,31,.4)">
+        <div style="font-family:'Zilla Slab',serif;font-size:22px;margin-bottom:20px">Najważniejsze informacje</div>
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <sc-for list="{{ p.facts }}" as="f" hint-placeholder-count="3">
+            <div style="border-bottom:1px solid #eef2ef;padding-bottom:16px">
+              <div style="color:#8a93a0;font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:5px">{{ f.label }}</div>
+              <div style="font-size:15px;font-weight:600;line-height:1.5">{{ f.value }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="background:linear-gradient(150deg,#0e9257,#0b3d2c 90%);border-radius:24px;padding:28px 26px;color:#fff">
+        <div style="color:rgba(255,255,255,.9);font-size:13px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:6px">Cena</div>
+        <div style="font-family:'Zilla Slab',serif;font-size:26px;line-height:1.15;margin-bottom:6px">✍️ Wycena — do ustalenia</div>
+        <p style="color:rgba(255,255,255,.95);font-size:13px;margin:0 0 18px">Podaj liczbę uczestników i zakres programu, a przygotujemy indywidualną wycenę.</p>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="Glowna.dc.html#kontakt" style="background:#fff;color:#0e9257;padding:13px 20px;border-radius:999px;font-weight:700;font-size:15px;text-align:center">Zapytaj o termin</a>
+          <a href="Glowna.dc.html#kontakt" style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.6);color:#fff;padding:13px 20px;border-radius:999px;font-weight:700;font-size:15px;text-align:center">Poproś o wycenę</a>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,460px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const p = {
+      tags: ['Sprzedaż','IT','B2B','Value Selling','Presales','Obiekcje','Finalizacja','Przewaga konkurencyjna','Sprzedaż doradcza','Account Management'],
+      intro: 'Sprzedaż usług IT wymaga czegoś więcej niż dobrej znajomości technologii. Klient może porównywać kilku dostawców, mieć trudność z dostrzeżeniem różnic między ofertami, angażować w decyzję osoby o zupełnie innych priorytetach albo odkładać decyzję, mimo że rozmowy trwają od miesięcy.',
+      lead: [
+        'To praktyczny program dla zespołów sprzedaży usług IT, w którym pracujemy nad całym procesem rozmowy z klientem B2B – od lepszego rozpoznania sytuacji i potrzeb, przez budowanie wartości i przewagi wobec konkurencji, aż po pracę z obiekcjami, finalizację i dalszy rozwój relacji.'
+      ],
+      forWhom: [
+        'Program jest przeznaczony dla handlowców, Account Managerów, Business Development Managerów, Presales oraz inżynierów sprzedaży pracujących z klientami B2B.',
+        'Szczególnie dobrze sprawdzi się w zespołach, w których sprzedaż wymaga połączenia wiedzy technologicznej z umiejętnością prowadzenia biznesowej rozmowy z klientem oraz współpracy osób odpowiedzialnych za sprzedaż i część merytoryczną rozwiązania.'
+      ],
+      about: [
+        'Nie uczymy jednego „idealnego skryptu sprzedaży”. Przyglądamy się temu, jak zespół sprzedaje dzisiaj, gdzie w procesie pojawiają się największe trudności i które zachowania warto wzmocnić lub zmienić.',
+        'Uczestnicy pracują na realnych sytuacjach ze swojej codzienności: rozmowach z klientami, ofertach konkurencji, typowych obiekcjach i powodach utraty szans sprzedażowych.',
+        'Pracujemy m.in. nad diagnozowaniem potrzeb i zadawaniem pytań, aktywnym słuchaniem, przekładaniem funkcjonalności technologicznych na wartość biznesową, budowaniem przewagi konkurencyjnej, dopasowaniem argumentacji do różnych decydentów oraz prowadzeniem klienta od zainteresowania do decyzji.',
+        'Dużo miejsca poświęcamy sytuacjom, które najczęściej zatrzymują sprzedaż: „konkurencja ma podobne rozwiązanie”, „jest za drogo”, „musimy się zastanowić”, „wróćmy do tego za kilka miesięcy”. Uczestnicy ćwiczą pracę z obiekcjami, odraczaniem decyzji i finalizacją bez wywierania niepotrzebnej presji.'
+      ],
+      why: [
+        'Bo jest mocno osadzony w realiach sprzedaży usług i rozwiązań IT, a nie w uniwersalnych przykładach sprzedażowych.',
+        'Zamiast tylko poznawać kolejne techniki, uczestnicy wykorzystują je podczas symulacji i pracy na własnych case studies. Dzięki temu mogą sprawdzić, jak prowadzić rozmowę, kiedy po drugiej stronie siedzi użytkownik, IT, procurement, CFO czy zarząd – i każdy z nich patrzy na tę samą ofertę z innej perspektywy.',
+        'Program może być również poprzedzony zebraniem najczęstszych sytuacji i obiekcji występujących w zespole, aby jeszcze mocniej dopasować pracę do rzeczywistych wyzwań sprzedażowych.'
+      ],
+      idealFor: ['Rozwój zespołu sprzedaży IT','Sprzedaż B2B','Presales','Sprzedaż doradczą','Value Selling','Pracę z obiekcjami','Finalizację sprzedaży','Budowanie przewagi konkurencyjnej','Rozwój Account Managerów'],
+      facts: [
+        { label: 'Format', value: 'online lub stacjonarnie' },
+        { label: 'Język', value: 'polski lub angielski' },
+        { label: 'Rekomendowana forma', value: '4 warsztaty po 4 godziny lub 2 pełne dni szkoleniowe' },
+        { label: 'Metody pracy', value: 'case studies, symulacje rozmów, ćwiczenia, analiza rzeczywistych sytuacji sprzedażowych, wymiana dobrych praktyk' }
+      ]
+    };
+    return { p };
+  }
+}
+</script>
+</body>
+</html>

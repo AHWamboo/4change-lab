@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Zilla+Slab:wght@500;600;700&family=Kaushan+Script&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    @media(max-width:760px){.brand-full{display:none!important}.brand-mark{display:block!important}}
+    body{margin:0}
+    a{color:#14181f;text-decoration:none;transition:color .15s ease}
+    a:hover{color:#12b76a}
+  </style>
+</helmet>
+<div style="font-family:'Manrope',sans-serif;background:#f6f8f5;color:#14181f">
+
+  <header style="position:sticky;top:0;z-index:30;background:rgba(246,248,245,.88);backdrop-filter:blur(12px);border-bottom:1px solid #dbe4dd">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 28px">
+      <a href="Glowna.dc.html" style="display:inline-flex;align-items:center"><img class="brand-full" src="uploads/logo-4change-lab.png" alt="4change Lab" style="height:44px;width:auto;display:block"><img class="brand-mark" src="uploads/logo-4change-mark.png" alt="4change Lab" style="height:42px;width:auto;display:none"></a>
+      <nav style="display:flex;align-items:center;gap:22px;font-weight:600;font-size:15px">
+        <a href="Warsztaty-z-grami.dc.html" style="color:#0e9257">Warsztaty z grami</a>
+        <a href="Szkolenia.dc.html">Szkolenia</a>
+        <a href="Glowna.dc.html#onas">O nas</a>
+        <a href="Blog.dc.html">Wiedza / Inspiracje</a>
+        <a href="Ankieta.dc.html" style="color:#0e9257">Dobierz grę</a>
+        <a href="Glowna.dc.html#kontakt">Kontakt</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px">
+        <div style="display:flex;flex:none;align-items:center;font-weight:700;font-size:14px;border:1px solid #dbe4dd;border-radius:999px;overflow:hidden;white-space:nowrap">
+          <span style="background:#14181f;color:#fff;padding:6px 12px">PL</span>
+          <span style="padding:6px 12px;color:#8a93a0">EN</span>
+        </div>
+        <a href="Ankieta.dc.html" style="background:#12b76a;color:#fff;padding:11px 20px;border-radius:999px;font-weight:700;font-size:15px">Kup grę</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="position:relative;overflow:hidden;background:linear-gradient(180deg,#eef3ee 0%,#f6f8f5 100%)">
+    <div style="max-width:1200px;margin:0 auto;padding:64px 28px 0;display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:end">
+      <div style="padding-bottom:56px">
+        <h1 style="font-family:'Zilla Slab',serif;font-weight:700;font-size:clamp(46px,6vw,84px);line-height:1;letter-spacing:-.01em;margin:0 0 14px">Grywalne<br>warsztaty</h1>
+        <p style="font-size:19px;color:#5c6470;margin:0 0 26px;max-width:440px">Zespół gra, podejmuje decyzje i wychodzi z wnioskami, które da się wdrożyć w poniedziałek.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="Ankieta.dc.html" style="background:#12b76a;color:#fff;padding:15px 28px;border-radius:16px;font-weight:700;font-size:16px;box-shadow:0 12px 26px rgba(18,183,106,.28)">Dobierz grę w 1 min</a>
+          <a href="Glowna.dc.html#kontakt" style="background:#fff;color:#14181f;padding:15px 28px;border-radius:16px;font-weight:700;font-size:16px;box-shadow:0 10px 24px rgba(20,24,31,.08)">Poproś o wycenę</a>
+        </div>
+      </div>
+      <div style="aspect-ratio:1/1;border-radius:32px;background:linear-gradient(160deg,#12b76a,#7b5cff);display:flex;align-items:flex-end;justify-content:center;padding:24px;margin-bottom:-64px;box-shadow:0 28px 60px rgba(18,183,106,.22)">
+        <span style="font-family:ui-monospace,monospace;font-size:12px;color:rgba(255,255,255,.9);letter-spacing:.06em;text-align:center;line-height:1.7">[ RENDER 3D / BOHATER<br>wrzuć grafikę tutaj ]</span>
+      </div>
+    </div>
+    <div style="height:96px"></div>
+  </section>
+
+  <!-- KAFLE -->
+  <section style="max-width:1200px;margin:0 auto;padding:72px 28px 20px;text-align:center">
+    <h2 style="font-family:'Zilla Slab',serif;font-weight:700;font-size:clamp(34px,4.6vw,60px);margin:0 0 14px">Nasze gry</h2>
+    <p style="font-size:18px;line-height:1.6;color:#5c6470;max-width:620px;margin:0 auto">Każdy tytuł prowadzimy stacjonarnie i online, z omówieniem i rekomendacjami po warsztacie.</p>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:36px 28px 80px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(252px,1fr));gap:22px">
+      <sc-for list="{{ items }}" as="it" hint-placeholder-count="12">
+        <a href="{{ it.link }}" style="position:relative;display:flex;flex-direction:column;justify-content:flex-end;aspect-ratio:3/4;border-radius:28px;overflow:hidden;padding:26px 24px;transition:transform .18s ease,box-shadow .18s ease;box-shadow:0 16px 34px rgba(20,24,31,.12)" style-hover="transform:translateY(-6px);box-shadow:0 26px 50px rgba(20,24,31,.2)">
+          <span style="{{ it.artStyle }}"></span>
+          <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,24,31,0) 32%,rgba(20,24,31,.78) 100%)"></span>
+          <span style="position:absolute;top:20px;left:22px;background:rgba(255,255,255,.92);color:#0e9257;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px">{{ it.tag }}</span>
+          <span style="position:absolute;top:52%;left:0;right:0;text-align:center;font-family:ui-monospace,monospace;font-size:11px;color:rgba(255,255,255,.55);letter-spacing:.06em">[ KEY ART ]</span>
+          <span style="position:relative;display:block;font-family:'Zilla Slab',serif;font-weight:700;font-size:24px;line-height:1.15;color:#fff;margin-bottom:6px">{{ it.name }}</span>
+          <span style="position:relative;display:block;color:rgba(255,255,255,.78);font-size:14px;font-weight:600">{{ it.meta }}</span>
+        </a>
+      </sc-for>
+      <a href="Ankieta.dc.html" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;aspect-ratio:3/4;border-radius:28px;background:linear-gradient(165deg,#f2e14c,#12b76a);padding:28px;transition:transform .18s ease" style-hover="transform:translateY(-6px)">
+        <span style="font-family:'Zilla Slab',serif;font-weight:700;font-size:27px;line-height:1.15;color:#14181f">Odkryj<br>nasze gry</span>
+        <span style="font-size:30px;color:#14181f;margin-top:16px">↓</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="max-width:1200px;margin:0 auto;padding:0 28px 96px">
+    <div style="position:relative;overflow:hidden;background:#14181f;border-radius:32px;padding:64px 48px;color:#f6f8f5;text-align:center">
+      <div style="position:absolute;inset:0;background:radial-gradient(circle at 20% 120%,rgba(18,183,106,.55),transparent 60%),radial-gradient(circle at 85% -10%,rgba(123,92,255,.45),transparent 55%)"></div>
+      <div style="position:relative">
+        <h2 style="font-family:'Zilla Slab',serif;font-weight:700;font-size:clamp(30px,4vw,50px);margin:0 0 14px">Nie wiesz, którą grę wybrać?</h2>
+        <p style="font-size:18px;color:rgba(246,248,245,.78);max-width:560px;margin:0 auto 28px">Powiedz nam, co ma się zmienić w zespole — dobierzemy grę, scenariusz i format wydarzenia.</p>
+        <a href="Ankieta.dc.html" style="display:inline-block;background:#f2e14c;color:#14181f;padding:16px 32px;border-radius:16px;font-weight:700;font-size:17px">Dobierz grę →</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,460px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const TBD = '✍️ do uzupełnienia';
+    const mk = (o) => ({
+      name: o.name, tag: o.tag, meta: o.meta || TBD,
+      link: o.link || 'Glowna.dc.html#kontakt',
+      artStyle: {
+        position: 'absolute', inset: 0,
+        background: `linear-gradient(165deg, ${o.c1}, ${o.c2})`
+      }
+    });
+    const items = [
+      mk({ name: 'Operacja: Echo', tag: 'Komunikacja', meta: '4–6 h · 8–30 osób · od 5 900 zł', link: 'Produkt-Operacja-Echo.dc.html', c1: '#12b76a', c2: '#0b3d2c' }),
+      mk({ name: 'Kompas Zmiany', tag: 'Zmiana', meta: '4–6 h · 8–24 osoby · od 5 900 zł', link: 'Produkt-Kompas-Zmiany.dc.html', c1: '#7b5cff', c2: '#1b1440' }),
+      mk({ name: 'Team Puzzle', tag: 'Współpraca', meta: '2–2,5 h · z omówieniem', link: 'Produkt-Team-Puzzle.dc.html', c1: '#2b7cff', c2: '#0e2a52' }),
+      mk({ name: 'Symbole', tag: 'Komunikacja', meta: '≈2 h · z omówieniem', link: 'Produkt-Symbole.dc.html', c1: '#12b76a', c2: '#241a4d' }),
+      mk({ name: 'Magneto', tag: 'Negocjacje', meta: '≈30 min · gra', link: 'Produkt-Magneto.dc.html', c1: '#f6a623', c2: '#0b3d2c' }),
+      mk({ name: 'Różni. Razem skuteczni.', tag: 'Samoświadomość', meta: 'Warsztat na bazie gry Magneto', link: 'Produkt-Rozni-Razem-Skuteczni.dc.html', c1: '#f6a623', c2: '#241a4d' }),
+      mk({ name: 'Po omacku', tag: 'Komunikacja', meta: '1–1,5 h · z omówieniem', link: 'Produkt-Po-Omacku.dc.html', c1: '#7b5cff', c2: '#0b3d2c' }),
+      mk({ name: 'Wielki Plan Firmowy', tag: 'Współpraca międzydziałowa', meta: 'do 3 h · do 150 osób', link: 'Produkt-Wielki-Plan-Firmowy.dc.html', c1: '#2b7cff', c2: '#2b1a5c' }),
+      mk({ name: 'The Tree of Life', tag: 'Zmiana · Adaptacyjność', meta: '≈3 h · 100–1000 osób', link: 'Produkt-The-Tree-Of-Life.dc.html', c1: '#12b76a', c2: '#4a3a0b' }),
+      mk({ name: 'Starożytna Świątynia', tag: 'Współpraca', meta: '90–120 min · do 200 osób', link: 'Produkt-Starozytna-Swiatynia.dc.html', c1: '#f6a623', c2: '#4a1408' }),
+      mk({ name: 'Licencja na współpracę', tag: 'Współpraca', meta: '120–150 min · do 200 osób', link: 'Produkt-Licencja-Na-Wspolprace.dc.html', c1: '#7b5cff', c2: '#101b3d' }),
+      mk({ name: 'Bardzo roboczy dzień', tag: 'Organizacja pracy · Priorytety', meta: 'ok. 120 min · zespoły 6-osobowe', link: 'Produkt-Bardzo-Roboczy-Dzien.dc.html', c1: '#f6a623', c2: '#10254a' }),
+      mk({ name: 'Konsorcjum West Egg', tag: 'Data storytelling · Gatsby', meta: 'do 6 h · do 150 osób', link: 'Produkt-Konsorcjum-West-Egg.dc.html', c1: '#f2e14c', c2: '#101b3d' }),
+      mk({ name: 'Zielone Światło', tag: 'Wystąpienia · Gatsby', meta: 'do 7 h · 20–60 osób', link: 'Produkt-Zielone-Swiatlo.dc.html', c1: '#12b76a', c2: '#0b3d2c' }),
+      mk({ name: 'Wspólnota „Nadzieja 17”', tag: 'Negocjacje', meta: '4–6 h · 8–30 osób', c1: '#2b7cff', c2: '#241a4d' }),
+      mk({ name: 'LEGO® Serious Play®', tag: 'Wizja', meta: '4–8 h · 6–20 osób', c1: '#7b5cff', c2: '#0e2a52' }),
+      mk({ name: '30 dni', tag: 'Zarządzanie zmianą', meta: '1,5–2 h · 8–20 osób', link: 'Produkt-30-Dni.dc.html', c1: '#12b76a', c2: '#10254a' }),
+      mk({ name: 'Wschód Dzikiego Zachodu', tag: 'Negocjacje · Sprzedaż', meta: 'do 5 h · 10–100 osób', link: 'Produkt-Wschod-Dzikiego-Zachodu.dc.html', c1: '#f6a623', c2: '#5c1a12' }),
+      mk({ name: 'Kod Zagrożenia', tag: 'Team building', meta: '3–5 h · 10–60 osób', c1: '#e5472b', c2: '#2a1040' })
+    ];
+    return { items };
+  }
+}
+</script>
+</body>
+</html>

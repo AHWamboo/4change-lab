@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Zilla+Slab:wght@500;600;700&family=Kaushan+Script&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    @media(max-width:760px){.brand-full{display:none!important}.brand-mark{display:block!important}}
+    body{margin:0}
+    a{text-decoration:none}
+  </style>
+</helmet>
+<div style="font-family:'Manrope',sans-serif;background:#f6f8f5;color:#14181f">
+
+  <header style="position:sticky;top:0;z-index:30;background:rgba(246,248,245,.9);backdrop-filter:blur(12px);border-bottom:1px solid #dbe4dd">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 28px">
+      <a href="Glowna.dc.html" style="display:inline-flex;align-items:center"><img class="brand-full" src="uploads/logo-4change-lab.png" alt="4change Lab" style="height:44px;width:auto;display:block"><img class="brand-mark" src="uploads/logo-4change-mark.png" alt="4change Lab" style="height:42px;width:auto;display:none"></a>
+      <nav style="display:flex;align-items:center;gap:22px;font-weight:600;font-size:15px">
+        <a href="Warsztaty-z-grami.dc.html" style="color:#14181f">Warsztaty z grami</a>
+        <a href="Szkolenia.dc.html" style="color:#0e9257">Szkolenia</a>
+        <a href="Glowna.dc.html#onas" style="color:#14181f">O nas</a>
+        <a href="Blog.dc.html" style="color:#14181f">Wiedza / Inspiracje</a>
+        <a href="Ankieta.dc.html" style="color:#0e9257">Dobierz grę</a>
+        <a href="Glowna.dc.html#kontakt" style="color:#14181f">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="max-width:1200px;margin:0 auto;padding:48px 28px 40px">
+    <a href="Szkolenia.dc.html" style="color:#5c6470;font-size:14px;font-weight:600">← Wszystkie szkolenia</a>
+    <div style="display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;margin-top:20px">
+      <div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px">
+          <sc-for list="{{ p.tags }}" as="t" hint-placeholder-count="6">
+            <span style="background:#f2e14c;color:#14181f;font-weight:700;font-size:13px;padding:6px 13px;border-radius:999px">{{ t }}</span>
+          </sc-for>
+        </div>
+        <h1 style="font-family:'Zilla Slab',serif;font-weight:700;font-size:clamp(38px,4.6vw,62px);line-height:1.03;margin:0 0 12px">Intensywny trening komunikacji</h1>
+        <p style="font-family:'Kaushan Script',cursive;font-weight:400;font-size:clamp(22px,2.6vw,30px);line-height:1.25;color:#0e9257;margin:0 0 20px">Ćwiczenie komunikacji, a nie słuchanie o komunikacji.</p>
+        <p style="font-size:18px;line-height:1.55;color:#5c6470;margin:0 0 28px;max-width:540px">{{ p.intro }}</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="Glowna.dc.html#kontakt" style="background:#12b76a;color:#fff;padding:14px 26px;border-radius:999px;font-weight:700;font-size:16px">Zapytaj o termin</a>
+          <a href="Glowna.dc.html#kontakt" style="background:#fff;border:1px solid #dbe4dd;color:#14181f;padding:14px 26px;border-radius:999px;font-weight:700;font-size:16px">Poproś o wycenę</a>
+        </div>
+      </div>
+      <div style="aspect-ratio:1/1;border-radius:32px;background:linear-gradient(160deg,#12b76a,#f2e14c 55%,#0b3d2c);box-shadow:0 28px 60px rgba(18,183,106,.24);display:flex;align-items:flex-end;justify-content:center;padding:24px">
+        <span style="font-family:ui-monospace,monospace;font-size:12px;color:rgba(255,255,255,.92);letter-spacing:.06em;text-align:center;line-height:1.7">[ KEY ART · INTENSYWNY TRENING KOMUNIKACJI<br>wrzuć grafikę tutaj ]</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:24px 28px 72px;display:grid;grid-template-columns:1.6fr .9fr;gap:44px;align-items:start">
+
+    <div style="display:flex;flex-direction:column;gap:44px">
+
+      <div style="display:flex;flex-direction:column;gap:14px;color:#3a424e;font-size:17px;line-height:1.6">
+        <sc-for list="{{ p.lead }}" as="para" hint-placeholder-count="2">
+          <p style="margin:0">{{ para }}</p>
+        </sc-for>
+      </div>
+
+      <div>
+        <h2 style="font-family:'Zilla Slab',serif;font-size:30px;margin:0 0 16px">Dla kogo?</h2>
+        <div style="display:flex;flex-direction:column;gap:14px;color:#3a424e;font-size:17px;line-height:1.6">
+          <sc-for list="{{ p.forWhom }}" as="w" hint-placeholder-count="2">
+            <p style="margin:0">{{ w }}</p>
+          </sc-for>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="font-family:'Zilla Slab',serif;font-size:30px;margin:0 0 16px">Cel programu</h2>
+        <div style="display:flex;flex-direction:column;gap:14px;color:#3a424e;font-size:17px;line-height:1.6;margin-bottom:0">
+          <sc-for list="{{ p.about }}" as="para" hint-placeholder-count="4">
+            <p style="margin:0">{{ para }}</p>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="background:#14181f;color:#f6f8f5;border-radius:24px;padding:36px 34px">
+        <h2 style="font-family:'Zilla Slab',serif;font-size:30px;margin:0 0 16px">Jak pracujemy?</h2>
+        <div style="display:flex;flex-direction:column;gap:14px;color:rgba(246,248,245,.86);font-size:16px;line-height:1.65">
+          <sc-for list="{{ p.why }}" as="w" hint-placeholder-count="4">
+            <p style="margin:0">{{ w }}</p>
+          </sc-for>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="font-family:'Zilla Slab',serif;font-size:30px;margin:0 0 8px">Korzyści dla uczestników</h2>
+        <p style="color:#5c6470;font-size:16px;margin:0 0 16px">Po programie uczestnicy będą lepiej przygotowani do:</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px">
+          <sc-for list="{{ p.benefits }}" as="b" hint-placeholder-count="7">
+            <div style="display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #e6ece7;border-radius:14px;padding:14px 16px;color:#3a424e;font-size:15px;line-height:1.5"><span style="color:#12b76a;flex:none">✓</span>{{ b }}</div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <aside style="position:sticky;top:96px;display:flex;flex-direction:column;gap:20px">
+      <div style="background:#fff;border:1px solid #e6ece7;border-radius:24px;padding:28px 26px;box-shadow:0 20px 40px -30px rgba(20,24,31,.4)">
+        <div style="font-family:'Zilla Slab',serif;font-size:22px;margin-bottom:20px">Najważniejsze informacje</div>
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <sc-for list="{{ p.facts }}" as="f" hint-placeholder-count="3">
+            <div style="border-bottom:1px solid #eef2ef;padding-bottom:16px">
+              <div style="color:#8a93a0;font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:5px">{{ f.label }}</div>
+              <div style="font-size:15px;font-weight:600;line-height:1.5">{{ f.value }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="background:linear-gradient(150deg,#0e9257,#0b3d2c 90%);border-radius:24px;padding:28px 26px;color:#fff">
+        <div style="color:rgba(255,255,255,.9);font-size:13px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:6px">Cena</div>
+        <div style="font-family:'Zilla Slab',serif;font-size:26px;line-height:1.15;margin-bottom:6px">✍️ Wycena — do ustalenia</div>
+        <p style="color:rgba(255,255,255,.95);font-size:13px;margin:0 0 18px">Podaj liczbę uczestników i zakres programu, a przygotujemy indywidualną wycenę.</p>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="Glowna.dc.html#kontakt" style="background:#fff;color:#0e9257;padding:13px 20px;border-radius:999px;font-weight:700;font-size:15px;text-align:center">Zapytaj o termin</a>
+          <a href="Glowna.dc.html#kontakt" style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.6);color:#fff;padding:13px 20px;border-radius:999px;font-weight:700;font-size:15px;text-align:center">Poproś o wycenę</a>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,460px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const p = {
+      tags: ['Komunikacja','Aktywne słuchanie','Asertywność','NVC','Trudne rozmowy','Granice','Feedback','Współpraca','Online'],
+      intro: 'Warsztat online oparty na ćwiczeniu komunikacji w sytuacjach zbliżonych do codziennej pracy uczestników.',
+      lead: [],
+      forWhom: [
+        'Warsztat dedykowany zespołom, których codzienna praca wymaga sprawnej komunikacji ze współpracownikami, przełożonymi oraz klientami wewnętrznymi i zewnętrznymi.',
+        'Szczególnie dobrze sprawdzi się w organizacjach, w których duża liczba współzależności, różne perspektywy i tempo pracy powodują, że niedopowiedzenia, założenia czy nieprecyzyjne komunikaty szybko przekładają się na jakość współpracy i realizację zadań.'
+      ],
+      about: [
+        'To intensywny trening oparty przede wszystkim na ćwiczeniu komunikacji, a nie słuchaniu o komunikacji. Uczestnicy pracują na sytuacjach zbliżonych do tych, z którymi spotykają się na co dzień: różnicy zdań, niejasnych oczekiwaniach, konieczności postawienia granicy, przekazania trudnej informacji, odmowy, nieporozumieniu czy rozmowie, w której każda ze stron inaczej interpretuje tę samą sytuację.',
+        'Przyglądamy się temu, co dzieje się pomiędzy intencją nadawcy a tym, co ostatecznie słyszy odbiorca. Pokazujemy, jak na komunikację wpływają nasze założenia, wcześniejsze doświadczenia, przekonania i interpretacje oraz dlaczego nawet pozornie jasny komunikat może prowadzić do zupełnie innych reakcji, niż zakładaliśmy.',
+        'Uczestnicy ćwiczą aktywne słuchanie, zadawanie pytań, parafrazowanie i sprawdzanie wzajemnego zrozumienia. Pracujemy również nad sposobem formułowania komunikatów – tak, aby były konkretne, zrozumiałe i adekwatne do sytuacji, a jednocześnie pozwalały zachować dobrą relację z rozmówcą.',
+        'Istotną częścią treningu jest asertywna komunikacja w trudniejszych sytuacjach. Uczestnicy sprawdzają, jak jasno komunikować swoje potrzeby i oczekiwania, mówić „nie”, stawiać granice, reagować na odmienne zdanie czy opór oraz rozmawiać o problemie bez niepotrzebnego eskalowania napięcia. Wykorzystujemy przy tym wybrane elementy NVC oraz praktyczne techniki komunikacyjne możliwe do zastosowania od razu po szkoleniu.'
+      ],
+      why: [
+        'Mała, maksymalnie 12-osobowa grupa pozwala prowadzić spotkania w formule rzeczywistego treningu komunikacji. Krótkie wprowadzenia merytoryczne przeplatamy ćwiczeniami, pracą w parach i podgrupach, symulacjami oraz analizą case studies.',
+        'W miarę możliwości bazujemy na rzeczywistych przykładach uczestników, dzięki czemu nie ćwiczymy abstrakcyjnych scenariuszy, ale sytuacje odpowiadające ich codziennym wyzwaniom zawodowym. Uczestnicy mogą testować różne sposoby prowadzenia rozmowy, obserwować ich efekt i otrzymywać informację zwrotną.',
+        'Pomiędzy spotkaniami proponujemy krótkie zadanie wdrożeniowe – wykorzystanie wybranego narzędzia lub sposobu komunikacji w codziennej pracy. Doświadczenia z jego realizacji stają się materiałem do dalszej pracy podczas drugiej części treningu.'
+      ],
+      benefits: [
+        'zwiększenia świadomości własnego sposobu komunikowania się i jego wpływu na innych',
+        'rozpoznawania momentów, w których fakty zaczynają mieszać się z interpretacjami i założeniami',
+        'szybszego wyjaśniania nieporozumień',
+        'aktywnego słuchania, zadawania pytań i doprecyzowywania informacji',
+        'jasnego komunikowania oczekiwań, potrzeb i własnego stanowiska',
+        'prowadzenia trudniejszych rozmów, stawiania granic i asertywnego reagowania bez rezygnowania z relacji i współpracy'
+      ],
+      facts: [
+        { label: 'Forma', value: 'online – aktywny warsztat' },
+        { label: 'Czas', value: '2 × 4 godziny' },
+        { label: 'Grupa', value: 'maksymalnie 12 osób' },
+        { label: 'Język', value: 'PL / ENG' },
+        { label: 'Dopasowanie', value: 'Warsztat może zostać dodatkowo dopasowany do specyfiki organizacji poprzez zebranie przed szkoleniem przykładów rzeczywistych sytuacji komunikacyjnych, które następnie wykorzystamy jako materiał do ćwiczeń i symulacji.' }
+      ]
+    };
+    return { p };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Zilla+Slab:wght@500;600;700&family=Kaushan+Script&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    @media(max-width:760px){.brand-full{display:none!important}.brand-mark{display:block!important}}
+    a{color:#0e9257;text-decoration:none}
+    a:hover{color:#0a6f43}
+  </style>
+</helmet>
+<div style="font-family:'Manrope',sans-serif;background:#f6f8f5;color:#14181f">
+
+  <header style="position:sticky;top:0;z-index:30;background:rgba(246,248,245,.9);backdrop-filter:blur(12px);border-bottom:1px solid #dbe4dd">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 28px">
+      <a href="Glowna.dc.html" style="display:inline-flex;align-items:center"><img class="brand-full" src="uploads/logo-4change-lab.png" alt="4change Lab" style="height:44px;width:auto;display:block"><img class="brand-mark" src="uploads/logo-4change-mark.png" alt="4change Lab" style="height:42px;width:auto;display:none"></a>
+      <nav style="display:flex;align-items:center;gap:22px;font-weight:600;font-size:15px">
+        <a href="Warsztaty-z-grami.dc.html" style="color:#14181f">Warsztaty z grami</a>
+        <a href="Szkolenia.dc.html" style="color:#14181f">Szkolenia</a>
+        <a href="Glowna.dc.html#onas" style="color:#14181f">O nas</a>
+        <a href="Blog.dc.html" style="color:#0e9257">Wiedza / Inspiracje</a>
+        <a href="Ankieta.dc.html" style="color:#14181f">Dobierz grę</a>
+      </nav>
+      <a href="Ankieta.dc.html" style="background:#12b76a;color:#fff;padding:11px 20px;border-radius:999px;font-weight:700;font-size:15px">Kup grę</a>
+    </div>
+  </header>
+
+  <article style="max-width:760px;margin:0 auto;padding:56px 28px 40px">
+
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;flex-wrap:wrap">
+      <a href="Blog.dc.html" style="display:inline-block;background:#f2e14c;color:#14181f;font-weight:700;font-size:13px;padding:6px 14px;border-radius:999px">Narzędzia i ćwiczenia</a>
+      <span style="color:#8a93a0;font-size:14px;font-weight:600">5 min czytania</span>
+    </div>
+
+    <div style="color:#0e9257;font-family:'Kaushan Script',cursive;font-size:28px;line-height:1.1;margin-bottom:12px">Dużo pracy nie zawsze oznacza duży postęp</div>
+    <h1 style="font-family:'Zilla Slab',serif;font-weight:700;font-size:clamp(32px,4.6vw,52px);line-height:1.06;margin:0 0 28px;text-wrap:balance">Kanban – zobacz, gdzie naprawdę zatrzymuje się praca zespołu</h1>
+
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 18px">Zespół pracuje. Każdy ma dużo zadań. Kalendarze są pełne.</p>
+    <p style="font-family:'Zilla Slab',serif;font-size:clamp(22px,2.8vw,30px);line-height:1.25;color:#14181f;margin:0 0 20px">A projekt nadal stoi.</p>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 18px">Problem często nie polega na tym, że ludzie robią za mało, ale na tym, że za dużo rzeczy jest rozpoczętych, część czeka na decyzję, a blokady pozostają niewidoczne.</p>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 44px">Prosta tablica Kanban pomaga to zobaczyć.</p>
+
+    <h2 style="font-family:'Zilla Slab',serif;font-size:clamp(25px,3.2vw,34px);line-height:1.15;margin:0 0 18px;text-wrap:balance">Jak przygotować tablicę?</h2>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 24px">Podziel ją na trzy kolumny:</p>
+
+    <figure style="margin:0 0 26px">
+      <img src="uploads/plansza-kanban.png" alt="Tablica Kanban z kolumnami To do, Doing i Done" style="display:block;width:100%;height:auto;border-radius:20px;border:1px solid #e4ebe3">
+      <figcaption style="margin-top:10px;color:#8a93a0;font-size:14px;font-weight:600">Tablica Kanban z materiału 4change</figcaption>
+    </figure>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:0 0 24px">
+      <sc-for list="{{ columns }}" as="c" hint-placeholder-count="3">
+        <div style="background:#fff;border:1px solid #e4ebe3;border-top:5px solid #22ab4b;border-radius:18px;padding:20px 22px">
+          <div style="font-weight:800;font-size:15px;letter-spacing:.07em;color:#14181f;margin-bottom:6px">{{ c.name }}</div>
+          <p style="margin:0;font-size:16px;line-height:1.45;color:#3a424e">{{ c.label }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 18px">Taki podstawowy układ został wykorzystany również w materiale 4change.</p>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 18px">Każde zadanie zapisujemy na osobnej karteczce i umieszczamy w odpowiedniej kolumnie.</p>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 44px">W miarę postępu pracy zadania przesuwają się z lewej strony na prawą.</p>
+
+    <h2 style="font-family:'Zilla Slab',serif;font-size:clamp(25px,3.2vw,34px);line-height:1.15;margin:0 0 18px;text-wrap:balance">Ale prawdziwe ćwiczenie zaczyna się dopiero teraz</h2>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 18px">Nie chodzi o samo przesuwanie karteczek.</p>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 24px">Spójrzcie wspólnie na tablicę i odpowiedzcie:</p>
+
+    <div style="display:flex;flex-direction:column;gap:12px;margin:0 0 24px">
+      <sc-for list="{{ questions }}" as="q" hint-placeholder-count="6">
+        <div style="display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #e4ebe3;border-left:5px solid #12b76a;border-radius:18px;padding:18px 22px">
+          <span style="color:#12b76a;font-size:18px;line-height:1.5;flex:none;font-weight:800">?</span>
+          <p style="margin:0;font-size:17px;line-height:1.5;color:#3a424e;font-weight:600">{{ q }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 44px">Można również wykorzystać tablicę dla całego zespołu, aby widoczny był postęp pracy poszczególnych osób i przepływ zadań. Materiał pokazuje przykłady zastosowania Kanbanu m.in. w sprzedaży, księgowości, obsłudze zgłoszeń i pracy zespołów projektowych.</p>
+
+    <h2 style="font-family:'Zilla Slab',serif;font-size:clamp(25px,3.2vw,34px);line-height:1.15;margin:0 0 18px;text-wrap:balance">Jaki efekt daje ćwiczenie?</h2>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 22px">Kanban pozwala zobaczyć pracę, która na co dzień ukryta jest w mailach, komunikatorach, notatkach i głowach pracowników.</p>
+    <div style="border-left:4px solid #12b76a;background:#eaf1ec;border-radius:0 16px 16px 0;padding:24px 26px;margin:0 0 36px">
+      <p style="margin:0;font-size:19px;line-height:1.55;color:#14181f;font-weight:600">Pomaga wychwycić blokady, uporządkować odpowiedzialność i sprawdzić, czy zespół rzeczywiście kończy zadania, czy przede wszystkim rozpoczyna kolejne.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:0 0 32px">
+      <sc-for list="{{ facts }}" as="f" hint-placeholder-count="3">
+        <div style="background:#fff;border:1px solid #e4ebe3;border-radius:18px;padding:20px 22px">
+          <div style="color:#8a93a0;font-weight:700;font-size:11px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:8px">{{ f.label }}</div>
+          <p style="margin:0;font-size:17px;line-height:1.4;color:#14181f;font-weight:700">{{ f.value }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="border-top:1px solid #dbe4dd;padding-top:24px;margin:0 0 44px">
+      <div style="color:#8a93a0;font-weight:700;font-size:11px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:12px">Tagi</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <sc-for list="{{ tags }}" as="t" hint-placeholder-count="9">
+          <span style="background:#eaf1ec;color:#0e9257;font-weight:700;font-size:13px;padding:6px 14px;border-radius:999px">{{ t }}</span>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="background:#14181f;color:#f6f8f5;border-radius:26px;padding:44px 40px;text-align:center">
+      <div style="color:#f2e14c;font-family:'Kaushan Script',cursive;font-size:26px;line-height:1.2;margin-bottom:10px">Zobaczcie swoją pracę</div>
+      <p style="font-family:'Zilla Slab',serif;font-size:clamp(22px,2.8vw,30px);line-height:1.25;margin:0 auto 26px;max-width:540px">Pomożemy uporządkować przepływ zadań i wychwycić blokady w Waszym zespole.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+        <a href="Szkolenia.dc.html" style="background:#12b76a;color:#fff;padding:14px 28px;border-radius:16px;font-weight:700;font-size:16px">Szkolenia</a>
+        <a href="Warsztaty-z-grami.dc.html" style="border:1.5px solid rgba(246,248,245,.4);color:#f6f8f5;padding:14px 28px;border-radius:16px;font-weight:700;font-size:16px">Warsztaty z grami</a>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid #dbe4dd;margin-top:44px;padding-top:24px">
+      <a href="Blog.dc.html" style="font-weight:700;font-size:15px">← Wróć do artykułów</a>
+    </div>
+
+  </article>
+
+  <dc-import name="Footer" hint-size="100%,460px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      columns: [
+        { name: 'TO DO', label: 'Do zrobienia' },
+        { name: 'DOING', label: 'W trakcie' },
+        { name: 'DONE', label: 'Zrobione' }
+      ],
+      questions: [
+        'Gdzie gromadzi się najwięcej zadań?',
+        'Które zadania najdłużej pozostają w „Doing”?',
+        'Co blokuje ich zakończenie?',
+        'Czy czekamy na czyjąś decyzję?',
+        'Czy mamy za dużo rozpoczętych rzeczy?',
+        'Czy wiadomo, kto odpowiada za każde zadanie?'
+      ],
+      facts: [
+        { label: 'Czas pierwszej sesji', value: '30–60 minut' },
+        { label: 'Liczba osób', value: '2–12' },
+        { label: 'Forma', value: 'online / stacjonarnie' }
+      ],
+      tags: ['organizacja pracy', 'efektywność', 'projekty', 'odpowiedzialność', 'priorytety', 'współpraca', 'komunikacja', 'online', 'stacjonarnie']
+    };
+  }
+}
+</script>
+</body>
+</html>

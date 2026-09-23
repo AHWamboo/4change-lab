@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Zilla+Slab:wght@500;600;700&family=Kaushan+Script&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    @media(max-width:760px){.brand-full{display:none!important}.brand-mark{display:block!important}}
+    a{color:#0e9257;text-decoration:none}
+    a:hover{color:#0a6f43}
+  </style>
+</helmet>
+<div style="font-family:'Manrope',sans-serif;background:#f6f8f5;color:#14181f">
+
+  <header style="position:sticky;top:0;z-index:30;background:rgba(246,248,245,.9);backdrop-filter:blur(12px);border-bottom:1px solid #dbe4dd">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 28px">
+      <a href="Glowna.dc.html" style="display:inline-flex;align-items:center"><img class="brand-full" src="uploads/logo-4change-lab.png" alt="4change Lab" style="height:44px;width:auto;display:block"><img class="brand-mark" src="uploads/logo-4change-mark.png" alt="4change Lab" style="height:42px;width:auto;display:none"></a>
+      <nav style="display:flex;align-items:center;gap:22px;font-weight:600;font-size:15px">
+        <a href="Warsztaty-z-grami.dc.html" style="color:#14181f">Warsztaty z grami</a>
+        <a href="Szkolenia.dc.html" style="color:#14181f">Szkolenia</a>
+        <a href="Glowna.dc.html#onas" style="color:#14181f">O nas</a>
+        <a href="Blog.dc.html" style="color:#0e9257">Wiedza / Inspiracje</a>
+        <a href="Ankieta.dc.html" style="color:#14181f">Dobierz grę</a>
+      </nav>
+      <a href="Ankieta.dc.html" style="background:#12b76a;color:#fff;padding:11px 20px;border-radius:999px;font-weight:700;font-size:15px">Kup grę</a>
+    </div>
+  </header>
+
+  <article style="max-width:760px;margin:0 auto;padding:56px 28px 40px">
+
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;flex-wrap:wrap">
+      <a href="Blog.dc.html" style="display:inline-block;background:#f2e14c;color:#14181f;font-weight:700;font-size:13px;padding:6px 14px;border-radius:999px">Narzędzia i ćwiczenia</a>
+      <span style="color:#8a93a0;font-size:14px;font-weight:600">5 min czytania</span>
+    </div>
+
+    <div style="color:#0e9257;font-family:'Kaushan Script',cursive;font-size:28px;line-height:1.1;margin-bottom:12px">Nie wystarczy zakończyć projekt</div>
+    <h1 style="font-family:'Zilla Slab',serif;font-weight:700;font-size:clamp(32px,4.6vw,52px);line-height:1.06;margin:0 0 24px;text-wrap:balance">4L – cztery pytania, które pomagają zespołowi wyciągać wnioski z doświadczeń</h1>
+
+    <p style="font-size:21px;line-height:1.5;color:#14181f;font-weight:600;margin:0 0 26px">Nie wystarczy zakończyć projekt. Warto jeszcze czegoś się z niego nauczyć.</p>
+
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 18px">Co zadziałało? Czego się nauczyliśmy? Czego nam zabrakło? Czego potrzebujemy w przyszłości?</p>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 44px">4L to proste ćwiczenie retrospektywne, które pomaga zespołowi zatrzymać się po projekcie, ważnym etapie pracy, wydarzeniu czy okresie intensywnych zmian i zamienić doświadczenia w konkretne wnioski.</p>
+
+    <h2 style="font-family:'Zilla Slab',serif;font-size:clamp(25px,3.2vw,34px);line-height:1.15;margin:0 0 18px;text-wrap:balance">Na czym polega 4L?</h2>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 26px">Podziel tablicę na cztery części:</p>
+
+    <figure style="margin:0 0 26px">
+      <img src="uploads/plansza-4l.png" alt="Plansza 4L: Liked, Learned, Lacked, Longer for w czterech polach" style="display:block;width:100%;height:auto;border-radius:20px;border:1px solid #e4ebe3">
+      <figcaption style="margin-top:10px;color:#8a93a0;font-size:14px;font-weight:600">Plansza „4L” z materiału 4change</figcaption>
+    </figure>
+
+    <div style="display:flex;flex-direction:column;gap:14px;margin:0 0 24px">
+      <sc-for list="{{ quadrants }}" as="q" hint-placeholder-count="4">
+        <div style="background:#fff;border:1px solid #e4ebe3;border-radius:20px;padding:22px 24px;border-left:6px solid #12b76a">
+          <div style="font-weight:800;font-size:16px;color:#14181f;margin-bottom:8px">{{ q.title }}</div>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#3a424e">{{ q.sub }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 44px">Dokładnie na tych czterech perspektywach opiera się format 4L opisany w materiale 4change.</p>
+
+    <h2 style="font-family:'Zilla Slab',serif;font-size:clamp(25px,3.2vw,34px);line-height:1.15;margin:0 0 18px;text-wrap:balance">Jak przeprowadzić ćwiczenie?</h2>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 18px">Najpierw daj każdemu uczestnikowi kilka minut na samodzielne zapisanie odpowiedzi. Dzięki temu głosu nie przejmą wyłącznie najbardziej aktywne osoby.</p>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 18px">Następnie umieśćcie wszystkie odpowiedzi na wspólnej tablicy.</p>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 18px">Połączcie podobne obserwacje i porozmawiajcie o tych, które pojawiały się najczęściej.</p>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 18px">Szczególnie przyjrzyjcie się relacji między Lacked i Longer for.</p>
+    <div style="border-left:4px solid #12b76a;background:#eaf1ec;border-radius:0 16px 16px 0;padding:24px 26px;margin:0 0 44px">
+      <p style="margin:0;font-size:19px;line-height:1.55;color:#14181f;font-weight:600">Jeżeli zespół mówi: „brakowało nam informacji”, kolejnym pytaniem powinno być: co możemy zmienić, aby następnym razem ich nie zabrakło?</p>
+    </div>
+
+    <h2 style="font-family:'Zilla Slab',serif;font-size:clamp(25px,3.2vw,34px);line-height:1.15;margin:0 0 18px;text-wrap:balance">Nie kończcie na refleksji</h2>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 22px">Na zakończenie wybierzcie 2–3 najważniejsze wnioski i zamieńcie je w konkretne działania.</p>
+    <div style="background:#14181f;color:#f6f8f5;border-radius:24px;padding:30px 32px;margin:0 0 44px">
+      <p style="margin:0;font-size:19px;line-height:1.55;font-weight:600">Bo wartością retrospektywy nie jest samo powiedzenie, co było dobre lub złe. Wartość pojawia się wtedy, gdy zespół wykorzystuje doświadczenie do zmiany przyszłego działania.</p>
+    </div>
+
+    <h2 style="font-family:'Zilla Slab',serif;font-size:clamp(25px,3.2vw,34px);line-height:1.15;margin:0 0 18px;text-wrap:balance">Jaki efekt daje 4L?</h2>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 18px">Ćwiczenie pozwala zespołowi zauważyć dobre praktyki, nazwać potrzeby i bariery oraz wyciągnąć wnioski bez koncentrowania rozmowy wyłącznie na błędach.</p>
+    <p style="font-size:19px;line-height:1.65;color:#3a424e;margin:0 0 32px">Dobrze sprawdzi się po zakończeniu projektu, etapu pracy, warsztatu, wdrożenia czy okresu dużej zmiany.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:0 0 32px">
+      <sc-for list="{{ facts }}" as="f" hint-placeholder-count="3">
+        <div style="background:#fff;border:1px solid #e4ebe3;border-radius:18px;padding:20px 22px">
+          <div style="color:#8a93a0;font-weight:700;font-size:11px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:8px">{{ f.label }}</div>
+          <p style="margin:0;font-size:17px;line-height:1.4;color:#14181f;font-weight:700">{{ f.value }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="border-top:1px solid #dbe4dd;padding-top:24px;margin:0 0 44px">
+      <div style="color:#8a93a0;font-weight:700;font-size:11px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:12px">Tagi</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <sc-for list="{{ tags }}" as="t" hint-placeholder-count="11">
+          <span style="background:#eaf1ec;color:#0e9257;font-weight:700;font-size:13px;padding:6px 14px;border-radius:999px">{{ t }}</span>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="background:#14181f;color:#f6f8f5;border-radius:26px;padding:44px 40px;text-align:center">
+      <div style="color:#f2e14c;font-family:'Kaushan Script',cursive;font-size:26px;line-height:1.2;margin-bottom:10px">Zamieńcie wnioski w działania</div>
+      <p style="font-family:'Zilla Slab',serif;font-size:clamp(22px,2.8vw,30px);line-height:1.25;margin:0 auto 26px;max-width:540px">Poprowadzimy retrospektywę Waszego zespołu albo pokażemy, jak robić ją samodzielnie.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+        <a href="Warsztaty-z-grami.dc.html" style="background:#12b76a;color:#fff;padding:14px 28px;border-radius:16px;font-weight:700;font-size:16px">Warsztaty z grami</a>
+        <a href="Szkolenia.dc.html" style="border:1.5px solid rgba(246,248,245,.4);color:#f6f8f5;padding:14px 28px;border-radius:16px;font-weight:700;font-size:16px">Szkolenia</a>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid #dbe4dd;margin-top:44px;padding-top:24px">
+      <a href="Blog.dc.html" style="font-weight:700;font-size:15px">← Wróć do artykułów</a>
+    </div>
+
+  </article>
+
+  <dc-import name="Footer" hint-size="100%,460px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      quadrants: [
+        { title: 'LIKED – Co było dobre?', sub: 'Co nam się podobało? Co dobrze zadziałało? Z czego jesteśmy zadowoleni?' },
+        { title: 'LEARNED – Czego się nauczyliśmy?', sub: 'Co dziś wiemy, czego nie wiedzieliśmy wcześniej? Jakie doświadczenie chcemy wykorzystać w przyszłości?' },
+        { title: 'LACKED – Czego nam brakowało?', sub: 'Jakich informacji, zasobów, kompetencji, decyzji albo sposobów działania zabrakło?' },
+        { title: 'LONGER FOR – Czego potrzebujemy?', sub: 'Czego chcielibyśmy więcej? Co pomogłoby nam pracować lepiej?' }
+      ],
+      facts: [
+        { label: 'Czas', value: '30–60 minut' },
+        { label: 'Liczba osób', value: '4–12' },
+        { label: 'Forma', value: 'online / stacjonarnie' }
+      ],
+      tags: ['feedback', 'współpraca', 'refleksja', 'projekty', 'komunikacja', 'rozwój zespołu', 'zmiana', 'odpowiedzialność', 'team building', 'online', 'stacjonarnie']
+    };
+  }
+}
+</script>
+</body>
+</html>

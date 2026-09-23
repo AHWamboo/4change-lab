@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Zilla+Slab:wght@500;600;700&family=Kaushan+Script&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    @media(max-width:760px){.brand-full{display:none!important}.brand-mark{display:block!important}}
+    a{color:#0e9257;text-decoration:none}
+    a:hover{color:#0a6f43}
+  </style>
+</helmet>
+<div style="font-family:'Manrope',sans-serif;background:#f6f8f5;color:#14181f;min-height:100vh">
+
+  <header style="position:sticky;top:0;z-index:30;background:rgba(246,248,245,.9);backdrop-filter:blur(12px);border-bottom:1px solid #dbe4dd">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 28px">
+      <a href="Glowna.dc.html" style="display:inline-flex;align-items:center"><img class="brand-full" src="uploads/logo-4change-lab.png" alt="4change Lab" style="height:44px;width:auto;display:block"><img class="brand-mark" src="uploads/logo-4change-mark.png" alt="4change Lab" style="height:42px;width:auto;display:none"></a>
+      <nav style="display:flex;align-items:center;gap:22px;font-weight:600;font-size:15px">
+        <a href="Warsztaty-z-grami.dc.html" style="color:#14181f">Warsztaty z grami</a>
+        <a href="Szkolenia.dc.html" style="color:#14181f">Szkolenia</a>
+        <a href="Glowna.dc.html#onas" style="color:#14181f">O nas</a>
+        <a href="Blog.dc.html" style="color:#0e9257">Wiedza / Inspiracje</a>
+        <a href="Ankieta.dc.html" style="color:#14181f">Dobierz grę</a>
+      </nav>
+      <a href="Ankieta.dc.html" style="background:#12b76a;color:#fff;padding:11px 20px;border-radius:999px;font-weight:700;font-size:15px">Kup grę</a>
+    </div>
+  </header>
+
+  <section style="max-width:1200px;margin:0 auto;padding:64px 28px 12px">
+    <div style="color:#0e9257;font-family:'Kaushan Script',cursive;font-size:30px;line-height:1.1;margin-bottom:12px">Wiedza / Inspiracje</div>
+    <h1 style="font-family:'Zilla Slab',serif;font-weight:700;font-size:clamp(36px,5.5vw,60px);line-height:1.02;margin:0 0 18px;text-wrap:balance">Blog 4change Lab</h1>
+    <p style="font-size:19px;line-height:1.55;color:#5c6470;margin:0;max-width:560px">Praktyczne spojrzenie na rozwój zespołów, szkolenia i uczenie się przez doświadczenie. Artykuły wyjaśniają problem, ćwiczenia dają gotowe narzędzie do przeprowadzenia z zespołem.</p>
+  </section>
+  <sc-if value="{{ showFeatured }}" hint-placeholder-val="{{ true }}">
+    <section style="max-width:1200px;margin:0 auto;padding:36px 28px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;align-items:start">
+
+      <article style="background:#fff;border:1px solid #e4ebe3;border-radius:22px;overflow:hidden;display:flex;flex-direction:column">
+        <div style="background:{{ lead.bandBg }};padding:56px 36px 60px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;gap:28px">
+          <span style="color:{{ lead.bandFg }};font-weight:800;font-size:12px;letter-spacing:.11em;text-transform:uppercase">{{ lead.type }}</span>
+          <p style="margin:0;font-family:'Kaushan Script',cursive;font-size:clamp(28px,3.6vw,42px);line-height:1.1;color:{{ lead.bandFg }}">{{ lead.kicker }}</p>
+        </div>
+        <div style="padding:34px 36px 32px;display:flex;flex-direction:column;gap:14px;flex:1">
+          <h2 style="font-family:'Zilla Slab',serif;font-size:clamp(26px,3vw,34px);line-height:1.12;margin:0;text-wrap:balance">{{ lead.title }}</h2>
+          <p style="font-size:17px;line-height:1.6;color:#5c6470;margin:0">{{ lead.excerpt }}</p>
+          <a href="{{ lead.href }}" style="margin-top:auto;padding-top:14px;color:#0e9257;text-decoration:none;font-weight:700;font-size:16px;display:inline-flex;align-items:center;gap:8px">{{ lead.cta }} <span>→</span></a>
+        </div>
+      </article>
+
+      <div style="background:#fff;border:1px solid #e4ebe3;border-radius:22px;padding:8px 30px">
+        <sc-for list="{{ side }}" as="item" hint-placeholder-count="3">
+          <article style="padding:26px 0;border-bottom:1px solid #eef1ee;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+              <span style="background:{{ item.bandBg }};color:{{ item.bandFg }};font-weight:800;font-size:10px;letter-spacing:.11em;text-transform:uppercase;padding:5px 11px;border-radius:999px">{{ item.type }}</span>
+              <span style="color:#8a93a0;font-weight:600;font-size:12px">{{ item.read }}</span>
+            </div>
+            <a href="{{ item.href }}" style="font-family:'Zilla Slab',serif;font-size:22px;line-height:1.2;color:#14181f;text-decoration:none;text-wrap:balance">{{ item.title }}</a>
+            <p style="margin:0;font-size:15px;line-height:1.5;color:#5c6470">{{ item.kicker }}</p>
+          </article>
+        </sc-for>
+        <div style="padding:22px 0 24px">
+          <a href="Blog.dc.html#wszystkie" style="color:#0e9257;text-decoration:none;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:8px">Wszystkie wpisy <span>→</span></a>
+        </div>
+      </div>
+
+    </section>
+  </sc-if>
+
+  <section id="wszystkie" style="max-width:1200px;margin:0 auto;padding:44px 28px 0;display:flex;flex-wrap:wrap;gap:10px">
+    <sc-for list="{{ filters }}" as="f" hint-placeholder-count="3">
+      <button onClick="{{ f.pick }}" style="background:{{ f.bg }};color:{{ f.fg }};border:1.5px solid {{ f.border }};font-family:'Manrope',sans-serif;font-weight:700;font-size:14px;padding:10px 20px;border-radius:999px;cursor:pointer">{{ f.label }}</button>
+    </sc-for>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:24px 28px 80px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;align-items:start">
+    <sc-for list="{{ posts }}" as="post" hint-placeholder-count="6">
+      <article style="background:#fff;border:1px solid #e4ebe3;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;height:100%">
+        <div style="background:{{ post.bandBg }};padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <span style="color:{{ post.bandFg }};font-weight:800;font-size:12px;letter-spacing:.11em;text-transform:uppercase">{{ post.type }}</span>
+          <span style="color:{{ post.bandFg }};font-weight:600;font-size:12px;opacity:.75">{{ post.read }}</span>
+        </div>
+        <div style="padding:26px 24px 24px;display:flex;flex-direction:column;gap:12px;flex:1">
+          <h2 style="font-family:'Zilla Slab',serif;font-size:23px;line-height:1.18;margin:0;text-wrap:balance">{{ post.title }}</h2>
+          <p style="font-size:16px;line-height:1.55;color:#5c6470;margin:0">{{ post.excerpt }}</p>
+          <a href="{{ post.href }}" style="margin-top:auto;padding-top:12px;color:#0e9257;text-decoration:none;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:8px">{{ post.cta }} <span>→</span></a>
+        </div>
+      </article>
+    </sc-for>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,460px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { filter: 'all' };
+  renderVals() {
+    const raw = [
+      {
+        id: 'integracja-online',
+        category: 'Praktyka zespołu',
+        read: '6 min czytania',
+        kicker: 'Nie kolejny nudny icebreaker',
+        title: 'Integracja zespołu online – 10 ćwiczeń, które nie są kolejnym nudnym icebreakerem',
+        excerpt: 'Integracja online nie musi zaczynać się od: „Powiedzcie, jakim zwierzęciem bylibyście dzisiaj”.',
+        href: 'Blog-Integracja-Online.dc.html',
+        body: [
+          'Dobre ćwiczenie może być lekkie, ale jednocześnie pomagać ludziom lepiej się poznać, poprawiać współpracę albo uruchamiać rozmowę o realnym problemie zespołu.',
+          'W środku: dziesięć ćwiczeń z gotowym przebiegiem i klucz doboru – czego akurat potrzebuje zespół.'
+        ]
+      },
+      {
+        id: 'wyznaczanie-celow',
+        category: 'Praktyka zespołu',
+        read: '4 min czytania',
+        kicker: 'Jasny cel nie musi oznaczać instrukcji',
+        title: 'Jak jasno określać cele i oczekiwane efekty pracy?',
+        excerpt: '„Zajmij się tym”. „Popraw prezentację”. „Przygotuj strategię”. Dla managera te polecenia mogą wydawać się oczywiste. Dla pracownika – niekoniecznie.',
+        href: 'Blog-Wyznaczanie-Celow.dc.html',
+        body: [
+          'Nie określaj tylko działania. Określ efekt – co ma powstać, po co, jak wygląda dobry rezultat i na kiedy.',
+          'W środku: pięć pytań, na które pracownik musi znać odpowiedź, i sposób sprawdzenia, czy naprawdę rozumiecie zadanie tak samo.'
+        ]
+      },
+      {
+        id: 'mniej-maili',
+        category: 'Praktyka zespołu',
+        read: '5 min czytania',
+        kicker: 'Odzyskaj czas na pracę',
+        title: 'Jak ograniczyć liczbę maili i spotkań w firmie?',
+        excerpt: 'Jeżeli pracownicy większość dnia czytają wiadomości o pracy, odpowiadają na nie i spotykają się, żeby porozmawiać o pracy – to kiedy wykonują samą pracę?',
+        href: 'Blog-Mniej-Maili.dc.html',
+        body: [
+          'Celem nie jest organizowanie mniejszej liczby spotkań za wszelką cenę. Celem jest odzyskanie czasu na pracę, dla której spotkania istnieją.',
+          'W środku: porządkowanie kanałów, zastąpienie statusów wspólną tablicą i kwartalny audyt spotkań.'
+        ]
+      },
+      {
+        id: 'feedback-praca-zdalna',
+        category: 'Praktyka zespołu',
+        read: '4 min czytania',
+        kicker: 'Feedback to rozmowa, nie werdykt',
+        title: 'Jak przekazywać feedback pracownikowi zdalnemu?',
+        excerpt: 'W biurze feedback często pojawia się mimochodem. W pracy zdalnej takich przypadkowych okazji jest mniej.',
+        href: 'Blog-Feedback-Praca-Zdalna.dc.html',
+        body: [
+          'Dlatego informacja zwrotna musi być bardziej świadomie zaplanowana – i nie powinna trafiać na czat.',
+          'W środku: oddzielenie faktu od interpretacji, rozmowa o efekcie i pytanie, które zamienia feedback w dialog.'
+        ]
+      },
+      {
+        id: 'efektywne-spotkania-online',
+        category: 'Praktyka zespołu',
+        read: '4 min czytania',
+        kicker: 'Różnica zaczyna się przed spotkaniem',
+        title: 'Jak prowadzić efektywne spotkania online?',
+        excerpt: 'Spotkanie online może trwać 30 minut i dać konkretny efekt. Może też trwać półtorej godziny i zakończyć się pytaniem: „To co właściwie ustaliliśmy?”',
+        href: 'Blog-Efektywne-Spotkania-Online.dc.html',
+        body: [
+          'Różnica bardzo często zaczyna się przed spotkaniem – przy celu, agendzie i doborze uczestników.',
+          'W środku: timeboxing, projektowanie aktywności i cztery rezultaty, którymi może zakończyć się każdy punkt.'
+        ]
+      },
+      {
+        id: 'angazowanie-online',
+        category: 'Praktyka zespołu',
+        read: '5 min czytania',
+        kicker: '10 prostych sposobów',
+        title: 'Jak angażować uczestników spotkania online? 10 prostych sposobów',
+        excerpt: 'Najłatwiejszy sposób na brak zaangażowania? Przez 45 minut mówić, a potem zapytać: „Czy ktoś ma jakieś pytania?”',
+        href: 'Blog-Angazowanie-Online.dc.html',
+        body: [
+          'Kiedy jedna osoba dominuje spotkanie online, pozostali uczestnicy łatwo przenoszą uwagę na inne zadania.',
+          'W środku: dziesięć konkretnych sposobów – od rund i pokoi, przez tablicę i głosowanie, po realny wpływ uczestników na decyzję.'
+        ]
+      },
+      {
+        id: 'rozliczanie-z-efektow',
+        category: 'Praktyka zespołu',
+        read: '4 min czytania',
+        kicker: 'Efekt zamiast obecności',
+        title: 'Jak rozliczać pracowników z efektów zamiast z czasu pracy?',
+        excerpt: '„Ile godzin nad tym pracowałeś?” nie zawsze jest najlepszym pytaniem managera. Znacznie ciekawsze brzmi: „Jaki efekt osiągnęliśmy?”',
+        href: 'Blog-Rozliczanie-Z-Efektow.dc.html',
+        body: [
+          'Żeby rozliczać z efektów, trzeba najpierw jasno powiedzieć, co tym efektem jest – co, jak dobrze i do kiedy.',
+          'W środku: określanie rezultatu i jakości, kamienie milowe i reagowanie na blokady, które wymagają decyzji managera.'
+        ]
+      },
+      {
+        id: 'bledy-managera',
+        category: 'Praktyka zespołu',
+        read: '5 min czytania',
+        kicker: 'Praca zdalna wymaga więcej jasności',
+        title: '5 błędów managera w zarządzaniu zespołem zdalnym',
+        excerpt: 'Praca zdalna nie stworzyła wszystkich problemów w zarządzaniu. Za to wiele z nich bardzo dobrze uwidoczniła.',
+        href: 'Blog-Bledy-Managera.dc.html',
+        body: [
+          'Niejasny efekt pracy, za mało feedbacku, kontrolowanie czasu zamiast rezultatu, zły kanał komunikacji i spotkanie zdominowane przez jedną osobę.',
+          'W środku: każdy z pięciu błędów z konkretnym przykładem i tym, co zrobić inaczej.'
+        ]
+      },
+      {
+        id: 'zespol-rozproszony',
+        category: 'Praktyka zespołu',
+        read: '5 min czytania',
+        kicker: 'Zaufanie nie oznacza braku zarządzania',
+        title: 'Jak zarządzać zespołem rozproszonym bez mikrozarządzania?',
+        excerpt: '„Nie widzę pracownika, więc nie wiem, czy pracuje”. Od tego przekonania jest bardzo krótka droga do kontrolowania aktywności zamiast efektów.',
+        href: 'Blog-Zespol-Rozproszony.dc.html',
+        body: [
+          'Im bardziej konkretny efekt, tym mniej potrzebujesz kontrolować proces.',
+          'W środku: punkty kontrolne, pytania o blokady i autonomia dobrana do doświadczenia pracownika.'
+        ]
+      },
+      {
+        id: 'komunikacja-hybrydowa',
+        category: 'Praktyka zespołu',
+        read: '5 min czytania',
+        kicker: 'Informacja nie może zależeć od lokalizacji',
+        title: 'Jak poprawić komunikację w zespole hybrydowym?',
+        excerpt: 'Największym problemem pracy hybrydowej nie jest to, że część ludzi pracuje z domu. Problem zaczyna się wtedy, gdy informacje rozchodzą się inaczej w zależności od tego, gdzie ktoś akurat siedzi.',
+        href: 'Blog-Komunikacja-Hybrydowa.dc.html',
+        body: [
+          'Osoby w biurze dowiadują się czegoś przy kawie. Osoby online – trzy dni później.',
+          'W środku: pięć zasad hybrydowej komunikacji i pytanie, które sprawdza, czy naprawdę wszyscy mają tę samą informację.'
+        ]
+      },
+      {
+        id: 'kanaly-komunikacji',
+        category: 'Praktyka zespołu',
+        read: '5 min czytania',
+        kicker: 'Kanał dobiera się do celu',
+        title: 'Mail, Teams, telefon czy spotkanie? Jak dobrać kanał komunikacji do sytuacji?',
+        excerpt: 'Nie każda informacja potrzebuje spotkania. Nie każda potrzebuje maila. I zdecydowanie nie każda wymaga telefonu.',
+        href: 'Blog-Kanaly-Komunikacji.dc.html',
+        body: [
+          'Jedną z najprostszych rzeczy, jakie może zrobić firma, żeby ograniczyć komunikacyjny chaos, jest określenie: jakim kanałem przekazujemy jaki rodzaj informacji.',
+          'W środku: do czego służy e-mail, komunikator, telefon i spotkanie, oraz trzy pytania przed wysłaniem wiadomości.'
+        ]
+      },
+      {
+        id: 'zasady-komunikacji',
+        category: 'Praktyka zespołu',
+        read: '7 min czytania',
+        kicker: 'Nigdy nie ustaliliśmy zasad',
+        title: 'Jak ustalić zasady komunikacji w zespole? 7 zasad, które warto uzgodnić',
+        excerpt: 'W jednym zespole wiadomość „możemy porozmawiać?” oznacza zwykłą prośbę o kontakt. W innym natychmiast uruchamia myśl: „Co się stało?”.',
+        href: 'Blog-Zasady-Komunikacji.dc.html',
+        body: [
+          'Wiele problemów komunikacyjnych w firmach nie wynika z braku dobrej woli. Wynika z tego, że nigdy nie ustaliliśmy wspólnych zasad.',
+          'W środku: siedem zasad do uzgodnienia – od podziału kanałów i definicji „pilnego”, przez feedback i różnice zdań, po miejsce, w którym zapisujecie decyzje.'
+        ]
+      },
+      {
+        id: 'chmura-slow',
+        category: 'Narzędzia i ćwiczenia',
+        read: '4 min czytania',
+        kicker: 'Czy rozumiemy to samo?',
+        title: 'Chmura słów – sprawdź, czy naprawdę tak samo rozumiemy klienta, firmę i wartości',
+        excerpt: '„Najważniejsza jest jakość obsługi klienta”. Świetnie. Tylko co dla każdego z nas oznacza „dobra obsługa”?',
+        href: 'Blog-Chmura-Slow.dc.html',
+        body: [
+          'Chmura słów pozwala bardzo szybko zobaczyć, jak różnie członkowie zespołu rozumieją to samo pojęcie.',
+          'W środku: przebieg ćwiczenia, porównanie odpowiedzi między działami i pytanie o to, jakie zachowania powinny wynikać z tych słów.'
+        ]
+      },
+      {
+        id: 'kreatywna-mapa-mysli',
+        category: 'Narzędzia i ćwiczenia',
+        read: '4 min czytania',
+        kicker: 'Więcej niż jedno rozwiązanie',
+        title: 'Kreatywna mapa myśli – jak znaleźć więcej niż jedno rozwiązanie problemu?',
+        excerpt: 'Kiedy pojawia się problem, często chwytamy się pierwszego sensownego rozwiązania.',
+        href: 'Blog-Kreatywna-Mapa-Mysli.dc.html',
+        body: [
+          'A gdyby zamiast pytać „co z tym zrobimy?”, zapytać: „na ile różnych sposobów możemy to rozwiązać?”',
+          'W środku: karta prac, przykładowe problemy biznesowe do centrum mapy i kryteria oceny rozwiązań.'
+        ]
+      },
+      {
+        id: 'literowa-piramida',
+        category: 'Narzędzia i ćwiczenia',
+        read: '4 min czytania',
+        kicker: 'Trzy rundy, jedno zadanie',
+        title: 'Literowa piramida – czy zespół rzeczywiście osiąga więcej niż jednostka?',
+        excerpt: 'Prosta mechanika, która prowadzi do ciekawej rozmowy o współpracy, strategii i wykorzystywaniu potencjału zespołu.',
+        href: 'Blog-Literowa-Piramida.dc.html',
+        body: [
+          'Uczestnicy wykonują dokładnie to samo zadanie trzy razy – samodzielnie, korzystając z wiedzy grupy i po ustaleniu wspólnej strategii.',
+          'W środku: dwie karty prac, przebieg trzech rund i pytania do omówienia, w którym tkwi cała wartość ćwiczenia.'
+        ]
+      },
+      {
+        id: 'metody-komunikacji',
+        category: 'Narzędzia i ćwiczenia',
+        read: '4 min czytania',
+        kicker: 'Ustalcie własne zasady',
+        title: 'Metody komunikacji – jak ustalić zasady komunikacji w zespole?',
+        excerpt: 'Ten sam komunikat wysłany mailem, na Teamsach i przekazany podczas rozmowy może wywołać zupełnie inną reakcję.',
+        href: 'Blog-Metody-Komunikacji.dc.html',
+        body: [
+          'Problem zaczyna się wtedy, gdy zakładamy, że inni chcą komunikować się dokładnie tak samo jak my.',
+          'W środku: karta prac z pięcioma obszarami – codzienna komunikacja, sytuacje pilne, feedback, konflikt i pochwały – oraz kontrakt komunikacyjny, który z niej powstaje.'
+        ]
+      },
+      {
+        id: 'mniej-spotkan',
+        category: 'Praktyka zespołu',
+        read: '6 min czytania',
+        kicker: 'Mniej spotkań, lepsze spotkania',
+        title: 'Mniej spotkań, lepsze spotkania – jak uporządkować komunikację w zespole?',
+        excerpt: 'Nie każda informacja potrzebuje spotkania. Nie każda potrzebuje maila. I zdecydowanie nie każda potrzebuje odpowiedzi „na już”.',
+        href: 'Blog-Mniej-Spotkan.dc.html',
+        body: [
+          'Jednym z powodów przeciążenia komunikacją jest brak wspólnych zasad. Pilna sprawa przychodzi mailem, ważna decyzja ginie na czacie, a później organizujemy spotkanie, żeby ustalić, co właściwie zostało ustalone.',
+          'W środku: podział kanałów komunikacji, wspólna definicja „pilnego” i pytanie, które warto zadać przed każdym spotkaniem.'
+        ]
+      },
+      {
+        id: 'spotkania-online',
+        category: 'Praktyka zespołu',
+        read: '5 min czytania',
+        kicker: 'Zaangażowania nie dodaje się na końcu',
+        title: 'Jak angażować ludzi podczas spotkań online?',
+        excerpt: 'Spotkanie online bardzo łatwo zmienić w prezentację jednej osoby dla kilkunastu wyłączonych mikrofonów. Problem nie zawsze leży po stronie uczestników.',
+        href: 'Blog-Spotkania-Online.dc.html',
+        body: [
+          'Nie planuj tylko tego, co powiesz. Zaplanuj również, co będą robić uczestnicy.',
+          'W środku: zmiana form aktywności, pytania, na które da się odpowiedzieć, i projektowanie interakcji od początku spotkania.'
+        ]
+      },
+      {
+        id: 'retrospektywa',
+        category: 'Praktyka zespołu',
+        read: '5 min czytania',
+        kicker: 'Nie szukaj winnego. Szukaj wzorca.',
+        title: 'Jak prowadzić retrospektywę zespołu?',
+        excerpt: 'Nie pytaj tylko: „Co poszło nie tak?”. Jeżeli retrospektywa koncentruje się wyłącznie na problemach, bardzo szybko może zamienić się w szukanie winnych.',
+        href: 'Blog-Retrospektywa.dc.html',
+        body: [
+          'Jej cel jest inny: wykorzystać doświadczenie zespołu, żeby następnym razem pracować lepiej.',
+          'W środku: 4L i Start/Stop/Continue, zmiana przedmiotu rozmowy z człowieka na sposób pracy i ciąg dalszy, bez którego retrospektywa nic nie zmienia.'
+        ]
+      },
+      {
+        id: 'rozmowy-1na1',
+        category: 'Praktyka zespołu',
+        read: '5 min czytania',
+        kicker: '1:1 nie jest odprawą',
+        title: 'Jak prowadzić 1:1, żeby nie było tylko rozmową o statusie zadań?',
+        excerpt: '„Jak idzie projekt?” „Dobrze.” „Masz jakieś problemy?” „Nie.” Jeżeli tak wygląda 1:1, prawdopodobnie nie potrzebujesz godzinnego spotkania.',
+        href: 'Blog-Rozmowy-1na1.dc.html',
+        body: [
+          'Status zadań można sprawdzić w systemie. Rozmowa 1:1 ma znacznie większy potencjał: feedback, mocne strony, kierunek rozwoju.',
+          'W środku: pytania zamiast „co zrobiłeś?”, warunki rozmowy i dopasowanie jej do doświadczenia pracownika.'
+        ]
+      },
+      {
+        id: 'priorytety',
+        category: 'Praktyka zespołu',
+        read: '4 min czytania',
+        kicker: 'Jeśli wszystko jest priorytetem, nic nim nie jest',
+        title: 'Jak ustalać priorytety, kiedy wszystko wydaje się ważne?',
+        excerpt: 'Pytanie nie brzmi: co mamy do zrobienia? Pytanie brzmi: co z tego jest najważniejsze?',
+        href: 'Blog-Priorytety.dc.html',
+        body: [
+          'Tablica celu i macierz wartość/wysiłek robią priorytety widocznymi i zmuszają zespół do rozmowy o tym, dlaczego jedno zadanie jest ważniejsze od drugiego.',
+          'W środku: cztery grupy działań i najtrudniejsza decyzja – czego NIE zrobimy.'
+        ]
+      },
+      {
+        id: 'kto-co-do-kiedy',
+        category: 'Praktyka zespołu',
+        read: '4 min czytania',
+        kicker: 'Ostatnie 10 minut należy do decyzji',
+        title: 'Jak kończyć spotkania konkretną decyzją: kto, co i do kiedy?',
+        excerpt: '„Dobre spotkanie”. Wszyscy wychodzą zadowoleni. Tydzień później okazuje się, że każdy inaczej zrozumiał, co miało wydarzyć się dalej.',
+        href: 'Blog-Kto-Co-Do-Kiedy.dc.html',
+        body: [
+          'Rozmawiamy o zadaniach, ale nie ustalamy odpowiedzialności. Dlatego jedno z najważniejszych pytań na zakończenie spotkania brzmi: kto, co i do kiedy?',
+          'W środku: prosta tablica ustaleń i to, dlaczego „musimy przygotować ofertę” nie jest ustaleniem.'
+        ]
+      },
+      {
+        id: 'brainstorming',
+        category: 'Praktyka zespołu',
+        read: '5 min czytania',
+        kicker: 'Generowanie → porządkowanie → wybór',
+        title: 'Jak prowadzić brainstorming, z którego naprawdę coś wynika?',
+        excerpt: 'Burza mózgów potrafi wygenerować 50 pomysłów. Problem zaczyna się wtedy, kiedy po spotkaniu nie dzieje się z nimi nic.',
+        href: 'Blog-Brainstorming.dc.html',
+        body: [
+          'Dobry brainstorming nie kończy się na generowaniu pomysłów. Powinien przeprowadzić zespół przez trzy etapy: generowanie, porządkowanie i wybór.',
+          'W środku: rozgrzewka wyprowadzająca ze schematów, praca na indywidualnych karteczkach i sposoby selekcji pomysłów.'
+        ]
+      },
+      {
+        id: 'rytm-spotkan',
+        category: 'Praktyka zespołu',
+        read: '6 min czytania',
+        kicker: 'Zacznij od celu, nie od kalendarza',
+        title: 'Daily, weekly czy monthly – jak dobrać rytm spotkań do zespołu?',
+        excerpt: 'Nie każdy zespół potrzebuje codziennego spotkania. I nie każda sprawa powinna czekać do miesięcznego podsumowania.',
+        href: 'Blog-Rytm-Spotkan.dc.html',
+        body: [
+          'Czasami problemem nie jest liczba spotkań, ale brak jasnej odpowiedzi na pytanie: po co właściwie się spotykamy?',
+          'W środku: do czego służy daily, weekly i monthly, oraz trzy pytania, które warto zadać przed wpisaniem spotkania do kalendarzy.'
+        ]
+      },
+      {
+        id: 'macierz-wartosc-wysilek',
+        category: 'Narzędzia i ćwiczenia',
+        read: '5 min czytania',
+        kicker: 'Wszystkiego nie zrobicie. I bardzo dobrze.',
+        title: 'Macierz wartość / wysiłek – jak zdecydować, czym naprawdę warto się zająć?',
+        excerpt: 'Po burzy mózgów na tablicy może znaleźć się 30 pomysłów. Problem w tym, że 30 pomysłów to jeszcze nie plan działania.',
+        href: 'Blog-Macierz-Wartosc-Wysilek.dc.html',
+        body: [
+          'Oś pionowa określa wartość, jaką może przynieść realizacja pomysłu, oś pozioma – wysiłek potrzebny do jego wdrożenia. W ten sposób powstają cztery pola.',
+          'W środku: wszystkie cztery kategorie, sposób pracy z macierzą i pole „Nie rób tego”, które bywa najważniejsze.'
+        ]
+      },
+      {
+        id: 'kanban',
+        category: 'Narzędzia i ćwiczenia',
+        read: '5 min czytania',
+        kicker: 'Dużo pracy nie zawsze oznacza duży postęp',
+        title: 'Kanban – zobacz, gdzie naprawdę zatrzymuje się praca zespołu',
+        excerpt: 'Zespół pracuje. Każdy ma dużo zadań. Kalendarze są pełne. A projekt nadal stoi.',
+        href: 'Blog-Kanban.dc.html',
+        body: [
+          'Problem często nie polega na tym, że ludzie robią za mało, ale na tym, że za dużo rzeczy jest rozpoczętych, część czeka na decyzję, a blokady pozostają niewidoczne.',
+          'W środku: trzy kolumny tablicy i pytania, które zamieniają przesuwanie karteczek w prawdziwe ćwiczenie.'
+        ]
+      },
+      {
+        id: '4l',
+        category: 'Narzędzia i ćwiczenia',
+        read: '5 min czytania',
+        kicker: 'Nie wystarczy zakończyć projekt',
+        title: '4L – cztery pytania, które pomagają zespołowi wyciągać wnioski z doświadczeń',
+        excerpt: 'Co zadziałało? Czego się nauczyliśmy? Czego nam zabrakło? Czego potrzebujemy w przyszłości?',
+        href: 'Blog-4L.dc.html',
+        body: [
+          '4L to proste ćwiczenie retrospektywne, które pomaga zespołowi zatrzymać się po projekcie, ważnym etapie pracy, wydarzeniu czy okresie intensywnych zmian i zamienić doświadczenia w konkretne wnioski.',
+          'W środku: cztery pola planszy, przebieg ćwiczenia i relacja między Lacked a Longer for, na którą warto zwrócić szczególną uwagę.'
+        ]
+      },
+      {
+        id: 'nasza-droga-do-celu',
+        category: 'Narzędzia i ćwiczenia',
+        read: '5 min czytania',
+        kicker: 'Masz cel. Ale czy zespół wie, jak do niego dojść?',
+        title: 'Nasza droga do celu – ćwiczenie, które zamienia duży cel w konkretną drogę',
+        excerpt: 'Cel może być jasny, a mimo to każdy członek zespołu może inaczej wyobrażać sobie drogę do jego osiągnięcia.',
+        href: 'Blog-Nasza-Droga-Do-Celu.dc.html',
+        body: [
+          'Ćwiczenie pozwala spojrzeć na projekt jak na wyprawę. Zespół określa miejsce, z którego startuje, kolejne kamienie milowe oraz cel, do którego zmierza.',
+          'W środku: plansza górskiej wędrówki i cztery kroki – od obecnych wyzwań, przez cel projektu i najważniejsze dążenie, do kamieni milowych.'
+        ]
+      },
+      {
+        id: 'lodz-zespolu',
+        category: 'Narzędzia i ćwiczenia',
+        read: '5 min czytania',
+        kicker: 'Zmień perspektywę',
+        title: 'Łódź zespołu – ćwiczenie, które pokazuje, co pomaga nam płynąć do celu, a co trzyma nas w miejscu',
+        excerpt: 'Czasami zespół doskonale wie, dokąd chce dotrzeć, ale znacznie trudniej odpowiedzieć mu na pytanie, dlaczego mimo to nie posuwa się wystarczająco szybko.',
+        href: 'Blog-Lodz-Zespolu.dc.html',
+        body: [
+          'Wyobraźcie sobie, że Wasz zespół płynie łodzią. Dokąd płynie? Co daje mu wiatr w żagle? Co jest kotwicą? A gdzie znajdują się skały, o które możecie się rozbić?',
+          'Metafora pozwala rozmawiać o trudnych kwestiach w mniej oceniający sposób. W środku: pięć elementów planszy i to, kiedy warto sięgnąć po ćwiczenie.'
+        ]
+      },
+      {
+        id: 'start-stop-continue',
+        category: 'Narzędzia i ćwiczenia',
+        read: '5 min czytania',
+        kicker: 'Od rozmowy do działania',
+        title: 'Start, Stop, Continue – proste ćwiczenie, które pomaga zespołowi przejść od rozmowy do działania',
+        excerpt: 'Zespół może odbyć bardzo dobrą rozmowę, mieć mnóstwo trafnych obserwacji i... tydzień później pracować dokładnie tak samo.',
+        href: 'Blog-Start-Stop-Continue.dc.html',
+        body: [
+          'Dobre podsumowanie projektu nie kończy się na pytaniu „Co o tym sądzimy?”. Potrzebna jest odpowiedź na pytanie: „Co w takim razie zrobimy inaczej?”',
+          'W środku: trzyczęściowa tablica, przebieg ćwiczenia krok po kroku i najważniejszy krok na koniec – ustalenie kto, co i do kiedy zrobi.'
+        ]
+      },
+      {
+        id: 'inkluzywna-integracja',
+        category: 'Projektowanie gier',
+        read: '8 min czytania',
+        kicker: 'Integracja ma łączyć',
+        title: 'Inkluzywna integracja zespołu – jak tworzyć gry, w których naprawdę każdy może uczestniczyć?',
+        excerpt: 'Integracja zespołu ma łączyć. Tymczasem źle zaprojektowana może osiągnąć dokładnie odwrotny efekt — dla części osób oznacza kilka godzin stresu albo poczucia, że nie pasują do zespołu.',
+        href: 'Blog-Inkluzywna-Integracja.dc.html',
+        body: [
+          'Dobra gra integracyjna nie próbuje różnic w zespole usunąć. Wykorzystuje je jako zasób — do sukcesu potrzebne są różne role, kompetencje i sposoby działania.',
+          'W środku: pięć zasad projektowania inkluzywnej integracji (sprawność fizyczna, style komunikacji, rywalizacja, różnice kulturowe, bezpieczeństwo psychologiczne) i lista pytań, którą warto zadać przed wyborem scenariusza.'
+        ]
+      },
+      {
+        id: 'menedzer',
+        category: 'Rozwój zespołu',
+        read: '6 min czytania',
+        kicker: 'Rola menedżera',
+        title: '🎯 Rola menedżera w każdym szkoleniu',
+        excerpt: 'Możesz kupić najlepsze szkolenie, świetnego trenera i topową wiedzę — a i tak zmarnować cały potencjał, jeśli menedżer popełni klasyczne „przestępstwa rozwojowe”.',
+        href: 'Blog-Rola-Menedzera.dc.html',
+        body: [
+          'To menedżer nadaje sens temu, czego uczy się zespół. Od jego postawy zależy, czy zespół wdroży choć 1% zdobytej wiedzy.',
+          'W środku rozkładamy na czynniki pierwsze 3 największe „przestępstwa” menedżera — PRZED, W TRAKCIE i PO szkoleniu — oraz to, co robić zamiast nich, żeby szkolenie było inwestycją, a nie kosztem.'
+        ]
+      },
+      {
+        id: 'dlaczego-gry',
+        category: 'Wiedza / Inspiracje',
+        read: '3 min czytania',
+        kicker: 'Zamiast słuchać — doświadczamy',
+        title: '🎲 Dlaczego lubimy gry w szkoleniach?',
+        excerpt: 'Można godzinę opowiadać o komunikacji, planowaniu pracy czy radzeniu sobie ze zmianą. A można zrobić grę i w 20 minut zobaczyć, co dzieje się w zespole naprawdę.',
+        href: 'Blog-Dlaczego-Gry.dc.html',
+        body: [
+          'W grach ludzie mówią i działają tak, jak naprawdę pracują. Bez slajdów, bez teorii, bez „powinno się”.',
+          'W środku: cztery rzeczy, które widać w pierwszych 20 minutach rozgrywki, i dlaczego wnioski z doświadczenia zostają dłużej niż z prezentacji.'
+        ]
+      },
+      {
+        id: 'wspolpraca',
+        category: 'Przepis na skuteczność',
+        read: '5 min czytania',
+        kicker: 'Efekt współpracy',
+        title: '🎯 Doskonałe szkolenie? To zawsze efekt współpracy',
+        excerpt: 'Rzadko zdarza się przypadkiem. Przepis na dobre szkolenie to trzy składniki, które muszą zagrać razem: aktywni uczestnicy, zaangażowany menedżer i profesjonalny trener.',
+        href: 'Blog-Doskonale-Szkolenie.dc.html',
+        body: [
+          'Gdy współpracują — szkolenie jest celne, skuteczne i przydatne. Gdy brakuje jednego z nich, pojawiają się trudne pytania o cel, zaufanie i wartość całego procesu.',
+          'W środku pokazujemy, jak wygląda każdy z trzech składników i co dzieje się, gdy któregoś brakuje.'
+        ]
+      }
+    ];
+    const isExercise = (p) => p.category === 'Narzędzia i ćwiczenia';
+    const active = this.state.filter;
+    const decorate = (p) => ({
+      ...p,
+      type: isExercise(p) ? 'Ćwiczenie' : 'Artykuł',
+      cta: isExercise(p) ? 'Zobacz ćwiczenie' : 'Czytaj artykuł',
+      bandBg: isExercise(p) ? '#f2e14c' : '#14181f',
+      bandFg: isExercise(p) ? '#14181f' : '#f6f8f5'
+    });
+    const filters = [
+      { key: 'all', label: 'Wszystko' },
+      { key: 'article', label: 'Artykuły' },
+      { key: 'exercise', label: 'Ćwiczenia' }
+    ].map(f => ({
+      label: f.label,
+      pick: () => this.setState({ filter: f.key }),
+      bg: active === f.key ? '#14181f' : 'transparent',
+      fg: active === f.key ? '#f6f8f5' : '#14181f',
+      border: active === f.key ? '#14181f' : '#dbe4dd'
+    }));
+    const showFeatured = active === 'all';
+    const matches = raw.filter(p => active === 'all' || (active === 'exercise' ? isExercise(p) : !isExercise(p)));
+    const rest = showFeatured ? matches.slice(4) : matches;
+    return {
+      filters,
+      showFeatured,
+      lead: decorate(raw[0]),
+      side: raw.slice(1, 4).map(decorate),
+      posts: rest.map(decorate)
+    };
+  }
+}
+</script>
+</body>
+</html>

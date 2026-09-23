@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Zilla+Slab:wght@500;600;700&family=Kaushan+Script&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    @media(max-width:760px){.brand-full{display:none!important}.brand-mark{display:block!important}}
+    body{margin:0}
+    a{text-decoration:none}
+  </style>
+</helmet>
+<div style="font-family:'Manrope',sans-serif;background:#f6f8f5;color:#14181f;min-height:100vh">
+  <header style="position:sticky;top:0;z-index:30;background:rgba(246,248,245,.9);backdrop-filter:blur(12px);border-bottom:1px solid #dbe4dd">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 28px">
+      <a href="Glowna.dc.html" style="display:inline-flex;align-items:center"><img class="brand-full" src="uploads/logo-4change-lab.png" alt="4change Lab" style="height:44px;width:auto;display:block"><img class="brand-mark" src="uploads/logo-4change-mark.png" alt="4change Lab" style="height:42px;width:auto;display:none"></a>
+      <nav style="display:flex;align-items:center;gap:22px;font-weight:600;font-size:15px">
+        <a href="Warsztaty-z-grami.dc.html" style="color:#14181f">Warsztaty z grami</a>
+        <a href="Szkolenia.dc.html" style="color:#14181f">Szkolenia</a>
+        <a href="Glowna.dc.html#onas" style="color:#14181f">O nas</a>
+        <a href="Glowna.dc.html" style="color:#14181f">Wiedza / Inspiracje</a>
+        <a href="Ankieta.dc.html" style="color:#0e9257">Dobierz grę</a>
+        <a href="Glowna.dc.html#kontakt" style="color:#14181f">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+  <div style="padding:56px 20px">
+  <div style="max-width:760px;margin:0 auto">
+
+    <div style="text-align:center;margin-bottom:32px">
+      <div style="display:inline-block;background:#f2e14c;color:#14181f;font-weight:700;font-size:13px;padding:6px 14px;border-radius:999px;margin-bottom:16px">Krótka ankieta</div>
+      <h1 style="font-family:'Zilla Slab',serif;font-size:clamp(30px,4.5vw,48px);margin:0 0 10px">Szukasz gry dla swojego zespołu?</h1>
+      <p style="color:#5c6470;font-size:18px;line-height:1.5;margin:0;max-width:560px;margin:0 auto">Odpowiedz na kilka krótkich pytań, a pokażemy Ci rozwiązania najlepiej dopasowane do Twojego wydarzenia.</p>
+    </div>
+
+    <div style="background:#fff;border:1px solid #e6ece7;border-radius:26px;padding:34px 34px 30px;box-shadow:0 20px 40px -30px rgba(20,24,31,.4)">
+
+      <sc-if value="{{ isResult }}" hint-placeholder-val="{{ false }}">
+        <!-- RESULT -->
+        <div style="text-align:center;padding:8px 0 4px">
+          <div style="font-size:44px;line-height:1;margin-bottom:12px">🎉</div>
+          <h2 style="font-family:'Zilla Slab',serif;font-size:32px;margin:0 0 10px">Mamy dla Ciebie kilka propozycji.</h2>
+          <p style="color:#5c6470;font-size:17px;line-height:1.5;margin:0 auto 26px;max-width:520px">Zobacz gry dopasowane do celu, liczby uczestników i formatu wydarzenia.</p>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:28px">
+            <a href="Glowna.dc.html#gry" style="background:#12b76a;color:#fff;padding:14px 26px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none">Pokaż dopasowane gry</a>
+            <a href="Glowna.dc.html#kontakt" style="background:#fff;border:1px solid #dbe4dd;color:#14181f;padding:14px 26px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none">Umów bezpłatną konsultację</a>
+          </div>
+          <div style="background:#eaf1ec;border-radius:18px;padding:22px 24px;text-align:left;display:flex;gap:14px;align-items:flex-start">
+            <span style="font-size:24px;flex:none">💬</span>
+            <p style="color:#3a424e;font-size:15px;line-height:1.55;margin:0">Nie masz pewności, która gra najlepiej sprawdzi się w Twoim zespole? Podczas bezpłatnej konsultacji dobierzemy rozwiązanie do celu wydarzenia, doświadczenia uczestników i oczekiwanego efektu.</p>
+          </div>
+          <button onClick="{{ restart }}" style="margin-top:22px;background:none;border:none;color:#5c6470;font-family:'Manrope',sans-serif;font-weight:600;font-size:14px;cursor:pointer;text-decoration:underline">↺ Wypełnij ankietę ponownie</button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isQuestion }}" hint-placeholder-val="{{ true }}">
+        <!-- QUESTION -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+          <span style="color:#0e9257;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase">Pytanie {{ stepLabel }} / {{ total }}</span>
+          <span style="color:#8a93a0;font-size:13px;font-weight:600">{{ hint }}</span>
+        </div>
+        <div style="height:6px;background:#eaf1ec;border-radius:999px;overflow:hidden;margin-bottom:22px">
+          <div style="height:100%;background:linear-gradient(90deg,#12b76a,#2b7cff);border-radius:999px;width:{{ progress }}"></div>
+        </div>
+
+        <h2 style="font-family:'Zilla Slab',serif;font-size:26px;margin:0 0 20px">{{ question }}</h2>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px">
+          <sc-for list="{{ options }}" as="o" hint-placeholder-count="6">
+            <button onClick="{{ o.toggle }}" style="{{ o.style }}">
+              <span style="width:20px;height:20px;border-radius:{{ o.mark }};border:2px solid {{ o.border }};background:{{ o.fill }};flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700">{{ o.tick }}</span>
+              <span style="text-align:left;display:flex;flex-direction:column;gap:3px">
+                <span>{{ o.label }}</span>
+                <sc-if value="{{ o.desc }}" hint-placeholder-val="{{ true }}">
+                  <span style="font-weight:500;font-size:13px;color:#5c6470;line-height:1.35">{{ o.desc }}</span>
+                </sc-if>
+              </span>
+            </button>
+          </sc-for>
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:26px;gap:12px">
+          <button onClick="{{ back }}" style="{{ backStyle }}">← Wstecz</button>
+          <button onClick="{{ next }}" style="{{ nextStyle }}">{{ nextLabel }}</button>
+        </div>
+      </sc-if>
+
+    </div>
+  </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:840,&quot;height&quot;:720}}">
+class Component extends DCLogic {
+  state = { step: 0, answers: {} };
+
+  questions = [
+    { key: 'cel', multi: true, max: 3, title: 'Co chcesz osiągnąć?', opts: ['poprawić komunikację','wzmocnić współpracę','zintegrować zespół','rozwinąć liderów','przygotować zespół do zmiany','poprawić organizację pracy','wesprzeć sprzedaż lub obsługę klienta','rozwinąć umiejętności negocjacyjne','przeprowadzić warsztat strategiczny','rozwiązać konkretny problem w zespole','dobrze się bawić','jeszcze nie wiem – potrzebuję rekomendacji'] },
+    { key: 'dlaKogo', title: 'Dla kogo szukasz rozwiązania?', opts: ['dla liderów lub menedżerów','dla zarządu','dla handlowców','dla HR','dla zespołu projektowego','dla nowego zespołu','dla zespołu produkcyjnego','dla różnych działów organizacji','dla całej firmy'] },
+    { key: 'ilu', title: 'Ilu będzie uczestników?', opts: ['do 20 osób','20–40 osób','40–100 osób','ponad 100 osób'] },
+    { key: 'formula', title: 'W jakiej formule ma odbyć się wydarzenie?', opts: ['stacjonarnie','online','nie mam jeszcze ustalonej formuły'] },
+    { key: 'czas', title: 'Ile czasu możesz przeznaczyć?', opts: ['do 2 godzin','2–4 godziny','4–8 godzin','cały dzień','więcej niż 1 dzień / program rozwojowy'] },
+    { key: 'doswiadczenie', title: 'Jak chcesz pracować?', opts: [
+      { label: 'dynamicznie i z dużą ilością energii', desc: 'dużo działania, interakcji, ruchu' },
+      { label: 'przez grę lub symulację', desc: 'doświadczenie najpierw, wnioski później' },
+      { label: 'na realnych sytuacjach z naszej pracy', desc: 'case studies, przykłady i problemy uczestników' },
+      { label: 'ćwiczyć konkretne umiejętności', desc: 'trening, scenki, feedback, praktyka' },
+      { label: 'strategicznie i warsztatowo', desc: 'wspólne wypracowywanie rozwiązań' },
+      { label: 'spokojniej, z przestrzenią na refleksję', desc: 'rozmowa, analiza, praca indywidualna i zespołowa' },
+      { label: 'chcę połączyć kilka metod' },
+      { label: 'nie wiem – dobierzcie metodę do celu' }
+    ] },
+    { key: 'sposob', title: 'Jakiego rozwiązania szukasz?', opts: [
+      { label: '🎲 Chcę kupić grę/scenariusz szkolenia', desc: 'i prowadzić ją samodzielnie' },
+      { label: '🎲 + 👤 Chcę zamówić grę/warsztat z prowadzeniem', desc: 'trener prowadzi całe spotkanie dla mojego zespołu' },
+      { label: '🎲 + 🧠 Chcę warsztat wykorzystujący grę', desc: 'gra jest częścią większego procesu rozwojowego' },
+      { label: '🧠 Chcę szkolenie lub warsztat bez gry', desc: 'praktyczna praca nad konkretnymi kompetencjami lub wyzwaniem' },
+      { label: '❓ Nie wiem – dobierzcie rozwiązanie do celu' }
+    ] },
+    { key: 'jezyk', title: 'W jakim języku ma odbyć się realizacja?', opts: ['po polsku','po angielsku','po portugalsku','nie ma znaczenia / rozwiązanie może być niezależne językowo'] }
+  ];
+
+  isSelected(key, opt, multi) {
+    const a = this.state.answers[key];
+    return multi ? Array.isArray(a) && a.includes(opt) : a === opt;
+  }
+
+  toggle(q, opt) {
+    this.setState(s => {
+      const answers = { ...s.answers };
+      if (q.multi) {
+        const cur = Array.isArray(answers[q.key]) ? answers[q.key].slice() : [];
+        const i = cur.indexOf(opt);
+        if (i >= 0) cur.splice(i, 1);
+        else if (cur.length < q.max) cur.push(opt);
+        answers[q.key] = cur;
+      } else {
+        answers[q.key] = opt;
+        return { answers, step: Math.min(s.step + 1, this.questions.length) };
+      }
+      return { answers };
+    });
+  }
+
+  canProceed() {
+    const q = this.questions[this.state.step];
+    if (!q) return true;
+    const a = this.state.answers[q.key];
+    return q.multi ? Array.isArray(a) && a.length > 0 : !!a;
+  }
+
+  renderVals() {
+    const step = this.state.step;
+    const total = this.questions.length;
+    const isResult = step >= total;
+    const q = this.questions[step];
+
+    const base = 'display:flex;align-items:flex-start;gap:12px;padding:14px 16px;border-radius:14px;font-family:Manrope,sans-serif;font-size:15px;font-weight:600;cursor:pointer;text-align:left;transition:all .12s ease;background:#fff;';
+    const options = q ? q.opts.map(o => {
+      const opt = typeof o === 'string' ? o : o.label;
+      const desc = typeof o === 'string' ? '' : (o.desc || '');
+      const sel = this.isSelected(q.key, opt, q.multi);
+      const disabled = q.multi && !sel && (this.state.answers[q.key]||[]).length >= q.max;
+      return {
+        label: opt,
+        desc,
+        toggle: () => { if (!disabled) this.toggle(q, opt); },
+        style: base + `border:2px solid ${sel ? '#12b76a' : '#e6ece7'};color:${sel ? '#0e9257' : '#14181f'};${disabled ? 'opacity:.45;cursor:not-allowed;' : ''}`,
+        mark: q.multi ? '6px' : '50%',
+        border: sel ? '#12b76a' : '#c7d0c9',
+        fill: sel ? '#12b76a' : 'transparent',
+        tick: sel ? '✓' : ''
+      };
+    }) : [];
+
+    const canProceed = this.canProceed();
+    const isLast = step === total - 1;
+    const btn = 'padding:13px 24px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;border:none;cursor:pointer;';
+
+    return {
+      total,
+      isResult,
+      isQuestion: !isResult,
+      stepLabel: String(step + 1),
+      progress: Math.round(((step) / total) * 100) + '%',
+      question: q ? q.title : '',
+      hint: q && q.multi ? `Zaznacz maks. ${q.max}` : 'Wybierz jedną',
+      options,
+      back: () => this.setState(s => ({ step: Math.max(0, s.step - 1) })),
+      next: () => { if (canProceed) this.setState(s => ({ step: Math.min(total, s.step + 1) })); },
+      restart: () => this.setState({ step: 0, answers: {} }),
+      backStyle: btn + `background:#f6f8f5;color:#14181f;${step === 0 ? 'opacity:.4;pointer-events:none;' : ''}`,
+      nextStyle: btn + `background:${canProceed ? '#14181f' : '#c7d0c9'};color:#fff;${canProceed ? '' : 'pointer-events:none;'}`,
+      nextLabel: isLast ? 'Zobacz wynik →' : 'Dalej →'
+    };
+  }
+}
+</script>
+</body>
+</html>
